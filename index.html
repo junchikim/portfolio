@@ -14,13 +14,13 @@
 
 <style>
   :root{
-    --ink:#0E1016; --ink-2:#161A23; --ink-3:#1E232F;
-    --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.055);
+    --ink:#222734; --ink-2:#2B3140; --ink-3:#353C4D;
+    --line-d:rgba(255,255,255,.15); --line-d2:rgba(255,255,255,.08);
     --paper:#F5F6F8; --card:#FFFFFF; --line:#E6E8ED;
     --text:#1B2330; --text-2:#5B6472; --text-3:#8A90A2;
-    --on-dark:#EAECF2; --on-dark-2:#9298A8; --on-dark-3:#5C6273;
-    --blue:#2563EB; --blue-2:#3B82F6; --blue-soft:rgba(37,99,235,.14);
-    --green:#10B981; --grn-2:#34D399; --green-soft:rgba(16,185,129,.14);
+    --on-dark:#F2F4F8; --on-dark-2:#B4BAC8; --on-dark-3:#7E8598;
+    --blue:#2563EB; --blue-2:#5B91F5; --blue-soft:rgba(37,99,235,.14);
+    --green:#10B981; --grn-2:#4ADE9B; --green-soft:rgba(16,185,129,.16);
     --rose:#FB7185; --rose-soft:rgba(251,113,133,.10);
     --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
     --sans:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
@@ -73,16 +73,16 @@
   /* result layer (base) */
   .u-result{transition:filter .75s ease,transform .75s ease}
   .unlock.locked .u-result{filter:blur(9px) brightness(.5) saturate(.85);transform:scale(.99)}
-  .rrow.a{background:linear-gradient(135deg,rgba(37,99,235,.14),rgba(16,185,129,.08));border:1px solid rgba(37,99,235,.28);justify-content:space-between}
-  .rrow.a .txt{font-size:clamp(13.5px,1.7vw,15.5px);font-weight:700;color:var(--on-dark);line-height:1.4}
-  .rrow.a .chip{font-family:var(--mono);font-weight:700;font-size:12.5px;color:var(--grn-2);background:var(--green-soft);border:1px solid rgba(16,185,129,.25);border-radius:8px;padding:6px 10px;white-space:nowrap;flex-shrink:0;margin-left:12px}
+  .rrow.a{background:linear-gradient(135deg,rgba(91,145,245,.20),rgba(74,222,155,.12));border:1px solid rgba(91,145,245,.38);justify-content:space-between}
+  .rrow.a .txt{font-size:clamp(14px,1.8vw,16px);font-weight:700;color:#FFFFFF;line-height:1.4}
+  .rrow.a .chip{font-family:var(--mono);font-weight:700;font-size:13.5px;color:var(--grn-2);background:rgba(16,185,129,.20);border:1px solid rgba(74,222,155,.4);border-radius:8px;padding:7px 12px;white-space:nowrap;flex-shrink:0;margin-left:12px}
   .rrow.a .chip .num{font-variant-numeric:tabular-nums}
   /* cover layer (problems) */
   .u-cover{position:absolute;inset:0;z-index:3;background:rgba(14,16,22,.4);backdrop-filter:blur(1px);transition:opacity .6s ease,transform .7s cubic-bezier(.4,0,.2,1),filter .6s ease}
   .unlock:not(.locked) .u-cover{opacity:0;transform:translateY(-14px) scale(1.015);filter:blur(10px);pointer-events:none}
   .rrow.b{background:rgba(251,113,133,.07);border:1px solid rgba(251,113,133,.18)}
   .rrow.b .tag{font-family:var(--mono);font-size:10px;color:var(--rose);border:1px solid rgba(251,113,133,.32);border-radius:5px;padding:2px 6px;flex-shrink:0}
-  .rrow.b .txt{font-size:clamp(13.5px,1.7vw,15.5px);font-weight:600;color:var(--on-dark-2);line-height:1.4}
+  .rrow.b .txt{font-size:clamp(14px,1.8vw,16px);font-weight:600;color:var(--on-dark-2);line-height:1.4}
   /* gate */
   .u-gate{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;padding:16px;transition:opacity .45s ease,transform .5s ease}
   .unlock:not(.locked) .u-gate{opacity:0;transform:scale(.96);pointer-events:none}
