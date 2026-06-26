@@ -51,11 +51,12 @@
   .hero{background:radial-gradient(1100px 560px at 80% -10%,rgba(37,99,235,.16),transparent 60%),radial-gradient(800px 460px at 0% 115%,rgba(16,185,129,.07),transparent 55%),var(--ink);color:var(--on-dark);padding:126px 0 78px;position:relative;overflow:hidden}
   .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line-d2) 1px,transparent 1px),linear-gradient(90deg,var(--line-d2) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(900px 600px at 72% 12%,#000,transparent 78%);mask-image:radial-gradient(900px 600px at 72% 12%,#000,transparent 78%);opacity:.5}
   .hero .wrap{position:relative;z-index:1}
-  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--blue-2);margin-bottom:20px;display:flex;align-items:center;gap:9px}
+  .hero-top{text-align:center;max-width:760px;margin:0 auto}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--blue-2);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:9px}
   .eyebrow::before{content:"";width:22px;height:1px;background:var(--blue-2)}
-  h1.hero-h{font-size:clamp(32px,5.4vw,56px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+  h1.hero-h{font-size:clamp(31px,5.2vw,54px);font-weight:800;line-height:1.16;letter-spacing:-.03em;margin-bottom:18px;text-wrap:balance}
   h1.hero-h .b{color:var(--rose)} h1.hero-h .a{color:var(--blue-2)}
-  .hero-sub{font-size:clamp(14.5px,2vw,17px);color:var(--on-dark-2);max-width:600px;margin-bottom:14px;line-height:1.7}
+  .hero-sub{font-size:clamp(14.5px,2vw,16.5px);color:var(--on-dark-2);max-width:540px;margin:0 auto 14px;line-height:1.75;text-wrap:balance}
 
   /* unlock stage */
   .stage-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 12px;min-height:24px}
@@ -83,9 +84,10 @@
   .rrow.b .tag{font-family:var(--mono);font-size:10px;color:var(--rose);border:1px solid rgba(251,113,133,.32);border-radius:5px;padding:2px 6px;flex-shrink:0}
   .rrow.b .txt{font-size:clamp(13.5px,1.7vw,15.5px);font-weight:600;color:var(--on-dark-2);line-height:1.4}
   /* gate */
-  .u-gate{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .45s ease,transform .5s ease}
+  .u-gate{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;padding:16px;transition:opacity .45s ease,transform .5s ease}
   .unlock:not(.locked) .u-gate{opacity:0;transform:scale(.96);pointer-events:none}
-  .u-gate .ask{font-family:var(--mono);font-size:13px;color:var(--on-dark);letter-spacing:.02em;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  .u-gate-panel{display:flex;flex-direction:column;align-items:center;gap:15px;background:rgba(13,15,21,.94);backdrop-filter:blur(6px);border:1px solid var(--line-d);border-radius:16px;padding:24px 30px;box-shadow:0 24px 70px -22px rgba(0,0,0,.85)}
+  .u-gate .ask{font-family:var(--mono);font-size:13px;color:var(--on-dark);letter-spacing:.02em;text-align:center}
   .u-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:800;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--blue),#1D4ED8);border:none;border-radius:12px;padding:14px 26px;cursor:pointer;box-shadow:0 10px 30px -8px rgba(37,99,235,.7);transition:transform .18s ease,box-shadow .2s ease}
   .u-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px rgba(37,99,235,.85)}
   .u-btn .ico{font-size:14px;opacity:.9}
@@ -95,9 +97,12 @@
     @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
   }
   @media(max-width:680px){
-    .rrow{min-height:74px}
+    .rrow{min-height:64px;padding:11px 16px}
     .rrow.a{flex-direction:column;align-items:flex-start;justify-content:center;gap:7px}
     .rrow.a .chip{margin-left:0}
+    .u-gate-panel{padding:22px 24px}
+    .u-gate .ask{font-size:12px}
+    .u-btn{font-size:14.5px;padding:13px 24px}
   }
 
   /* identity */
@@ -156,16 +161,16 @@
   @media(max-width:680px){ .cards{grid-template-columns:1fr} }
 
   /* skills */
-  .skills{padding:74px 0 20px}
+  .skills{background:#E9ECF1;border-top:1px solid #DDE1E8;border-bottom:1px solid #DDE1E8;padding:72px 0 78px;margin-top:48px}
   .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
-  .skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 2px 10px -6px rgba(20,30,55,.12)}
   .skill h4{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--blue);font-weight:700;margin-bottom:14px;text-transform:uppercase}
   .skill .tags{display:flex;flex-wrap:wrap;gap:7px}
   .skill .tags span{font-size:12.5px;color:var(--text);background:var(--paper);border:1px solid var(--line);padding:6px 10px;border-radius:8px}
   @media(max-width:680px){ .skill-grid{grid-template-columns:1fr} }
 
   /* footer */
-  footer{background:var(--ink);color:var(--on-dark);margin-top:84px;padding:68px 0 46px}
+  footer{background:var(--ink);color:var(--on-dark);margin-top:0;padding:68px 0 46px}
   .foot-cta{font-size:clamp(22px,3.2vw,30px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
   .foot-sub{color:var(--on-dark-2);font-size:14.5px;margin-bottom:26px}
   .foot-links{display:flex;gap:14px;flex-wrap:wrap}
@@ -194,9 +199,11 @@
 <!-- HERO : unlock -->
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="eyebrow">채용 의사결정 시뮬레이터</div>
-    <h1 class="hero-h">팀이 겪던 <span class="b">문제</span>가,<br><span class="a">결과</span>로 바뀝니다.</h1>
-    <p class="hero-sub">아래는 어느 팀이나 겪는 현재의 문제입니다. 김준치가 합류하면 같은 문제가 어떤 결과로 바뀌는지, 직접 열어 확인해 보세요.</p>
+    <div class="hero-top">
+      <div class="eyebrow">채용 의사결정 시뮬레이터</div>
+      <h1 class="hero-h">팀이 겪던 <span class="b">문제</span>가,<br><span class="a">결과</span>로 바뀝니다.</h1>
+      <p class="hero-sub">아래는 어느 팀이나 겪는 현재의 문제입니다.<br>김준치가 합류하면 같은 문제가 어떤 결과로 바뀌는지, 직접 열어 확인해 보세요.</p>
+    </div>
 
     <div class="stage-bar">
       <div class="stage-state locked" id="stageState"><span class="dot"></span>채용 전 · 팀의 현재</div>
@@ -208,9 +215,9 @@
       <div class="u-result rows" aria-hidden="true">
         <div class="rrow a"><span class="txt">당일 LTV로 KPI 재정의 — 광고비는 그대로</span><span class="chip">ROAS 300→<span class="num" data-to="400">300</span>%</span></div>
         <div class="rrow a"><span class="txt">선행 지표로 분해·실험해 병목을 푼다</span><span class="chip">재방문 +<span class="num" data-to="116">0</span>%</span></div>
-        <div class="rrow a"><span class="txt">AI로 발송조건을 직접 검증해 바로 운영</span><span class="chip">조건 <span class="num" data-to="27">0</span>종 검증</span></div>
-        <div class="rrow a"><span class="txt">고객 행동에서 성장 레버를 자동 진단</span><span class="chip">분석→캠페인</span></div>
-        <div class="rrow a"><span class="txt">Meta·GA를 매일 자동 통합·해석·제언</span><span class="chip">매일 자동</span></div>
+        <div class="rrow a"><span class="txt">AI로 CRM 발송조건을 SQL 기반으로 검증</span><span class="chip">조건 <span class="num" data-to="27">0</span>종</span></div>
+        <div class="rrow a"><span class="txt">데이터를 자동 매핑해 아하모먼트를 발굴</span><span class="chip">성장 레버 발굴</span></div>
+        <div class="rrow a"><span class="txt">API·Apps Script로 데일리 리포트·노티 자동화</span><span class="chip">매일 자동</span></div>
       </div>
       <!-- COVER (problems) -->
       <div class="u-cover rows">
@@ -222,8 +229,10 @@
       </div>
       <!-- GATE -->
       <div class="u-gate">
-        <div class="ask">이 문제들, 어떻게 풀었을까?</div>
-        <button class="u-btn" id="unlockBtn" type="button"><span class="ico">🔓</span>결과 보기</button>
+        <div class="u-gate-panel">
+          <div class="ask">이 문제들, 어떻게 풀었을까?</div>
+          <button class="u-btn" id="unlockBtn" type="button"><span class="ico">🔓</span>결과 보기</button>
+        </div>
       </div>
     </div>
   </div>
@@ -239,7 +248,7 @@
         <p class="id-bio">OTT·마이데이터·커머스 서비스를 A→Z로 스케일하고, 광고 효율이 아닌 <b>매출 구조 개선</b>을 중심으로 유입–전환–리텐션을 설계해왔습니다. 현재 자사 이커머스 CRM SaaS를 신규 구축하고 있습니다.</p>
         <div class="id-contact">
           <a href="mailto:junchikim321@gmail.com">✉ junchikim321@gmail.com</a>
-          <a href="https://www.linkedin.com/in/junchi-kim" target="_blank" rel="noopener">in · LinkedIn</a>
+          <a href="https://www.linkedin.com/in/junchi-kim" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
       <div class="scorecards">
@@ -309,7 +318,7 @@
         <div class="card">
           <div class="card-top"><span class="card-no">GROWTH CASE 04</span><span class="contrib">기여도 100%</span></div>
           <div class="card-title">아하모먼트 발굴 & 플라이휠 진단 워크플로우</div>
-          <p class="card-lead">첫 행동을 한 집단과 안 한 집단의 재구매율 차이(리프트)가 큰 행동을 아하모먼트로 점수화하고, 역신호(dead-end)까지 탐지. 진단 결과를 CRM 발송조건으로 출력해 분석→캠페인을 한 흐름으로 연결.</p>
+          <p class="card-lead">구매·회원 데이터를 넣으면 스키마를 자동 매핑하고, 첫 행동을 한 집단과 안 한 집단의 재구매율 차이(리프트)가 큰 행동을 아하모먼트로 점수화. 역신호(dead-end)까지 탐지하고, 자연어로 데이터에 질문하면 진단·제안을 CRM 발송조건으로 출력해 분석→캠페인을 한 흐름으로 연결.</p>
           <div class="kpis"><div class="kpi solo"><span class="k-cap">결과</span><span class="k-val" style="font-size:13px;color:var(--text)">성장 레버 자동 진단 파이프라인 구축</span></div></div>
           <div class="tools"><span class="tool lead">Google 스프레드시트</span><span class="tool">Apps Script</span><span class="tool">Claude API</span></div>
         </div>
@@ -393,7 +402,7 @@
     <p class="foot-sub">데이터로 지표를 재정의하고, 전환 구조로 매출을 설계합니다.</p>
     <div class="foot-links">
       <a class="solid" href="mailto:junchikim321@gmail.com">이메일로 연락하기</a>
-      <a href="https://www.linkedin.com/in/junchi-kim" target="_blank" rel="noopener">in · LinkedIn</a>
+      <a href="https://www.linkedin.com/in/junchi-kim" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="copy">© 2026 Junchi Kim · Growth & CRM Lead</div>
   </div>
