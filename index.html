@@ -176,6 +176,18 @@
   @media(max-width:760px){ .cards{grid-template-columns:1fr} .card{padding:20px 18px} }
 
   /* can do */
+  .teamtools{padding:64px 0 8px}
+  .tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .tt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .tt h4{font-size:15px;font-weight:800;margin-bottom:6px;letter-spacing:-.01em}
+  .tt p{font-size:13px;color:var(--text-2);line-height:1.6}
+  .tt p b{color:var(--text)}
+  .tt.feat{grid-column:1/-1;background:#fff;border-color:#D6DAE2}
+  .tt.feat ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin:10px 0 14px}
+  .tt.feat li{position:relative;padding-left:15px;font-size:13px;color:var(--text-2);line-height:1.55}
+  .tt.feat li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.55}
+  .tt.feat .note{margin:-4px 0 0}
+  @media(max-width:760px){ .tt-grid{grid-template-columns:1fr} }
   .skills{background:#E9ECF1;border-top:1px solid #DDE1E8;border-bottom:1px solid #DDE1E8;padding:72px 0 78px;margin-top:48px}
   .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
   .skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 2px 10px -6px rgba(20,30,55,.12)}
@@ -220,6 +232,7 @@
     <div class="nav-links">
       <a href="#how">HOW</a>
       <a href="#work">CASES</a>
+      <a href="#tools">TOOLS</a>
       <a href="#career">CAREER</a>
     </div>
     <a href="https://www.linkedin.com/in/junchi-kim" target="_blank" rel="noopener" class="cta">LinkedIn</a>
@@ -245,15 +258,15 @@
 
     <div class="unlock locked" id="unlock">
       <div class="u-result rows" id="uResult" aria-hidden="true">
-        <a class="rrow a" href="#case-appliance" tabindex="-1"><span class="txt">광고비는 그대로, 하루 구매가 늘었습니다<small>소형가전 커머스 · ROAS 300% → 400%</small></span><span class="chip">구매 <span class="num" data-to="2.4" data-dec="1">0</span>배</span></a>
+        <a class="rrow a" href="#case-dairy" tabindex="-1"><span class="txt">광고 밖 매출까지 함께 늘었습니다<small>유제품 쇼핑몰 · 하루 매출 3.2배</small></span><span class="chip">광고 외 매출 <span class="num" data-to="2.4" data-dec="1">0</span>배</span></a>
+        <a class="rrow a" href="#case-appliance" tabindex="-1"><span class="txt">광고비를 줄이고도 매출을 지켰습니다<small>소형가전 브랜드 · 실제 매출 기준 ROAS +29%</small></span><span class="chip">광고비 −<span class="num" data-to="21">0</span>%</span></a>
         <a class="rrow a" href="#case-mydata" tabindex="-1"><span class="txt">6개월 만에 다시 오는 사람이 늘었습니다<small>마이데이터 앱 · 재방문율 +116%</small></span><span class="chip">재방문 <span class="num" data-to="2">0</span>배 이상</span></a>
-        <a class="rrow a" href="#case-fresh" tabindex="-1"><span class="txt">광고 없이 들어오고 다시 사는 구조를 만들었습니다<small>신선식품 커머스 · 구매전환율 2.3% → 5.4%</small></span><span class="chip">매출 <span class="num" data-to="4.3" data-dec="1">0</span>배</span></a>
-        <a class="rrow a" href="#case-retous" tabindex="-1"><span class="txt">쓰지 못하던 CRM이 매출을 만들기 시작했습니다<small>리토스 CRM 도입 4개월 · 유제품 쇼핑몰</small></span><span class="chip">구매 <span class="num" data-to="3.7" data-dec="1">0</span>배</span></a>
+        <a class="rrow a" href="#case-retous" tabindex="-1"><span class="txt">누구에게 보낼지 고르는 조건을 만들었습니다<small>리토스 CRM · 고객사 3곳 연동</small></span><span class="chip">발송 조건 <span class="num" data-to="50">0</span>종</span></a>
       </div>
       <div class="u-cover rows">
-        <div class="rrow b"><span class="tag">문제</span><span class="txt">광고비를 늘려도 매출이 제자리다</span></div>
+        <div class="rrow b"><span class="tag">문제</span><span class="txt">광고를 늘려도 광고 밖 매출은 그대로다</span></div>
+        <div class="rrow b"><span class="tag">문제</span><span class="txt">광고 화면의 ROAS만 믿고 예산을 쓴다</span></div>
         <div class="rrow b"><span class="tag">문제</span><span class="txt">가입은 느는데 다시 오지 않는다</span></div>
-        <div class="rrow b"><span class="tag">문제</span><span class="txt">광고를 끄면 매출도 멈춘다</span></div>
         <div class="rrow b"><span class="tag">문제</span><span class="txt">CRM 툴은 있는데 못 쓰고 있다</span></div>
       </div>
       <div class="u-gate">
@@ -274,7 +287,7 @@
         <div class="id-name">김준치<span>Junchi Kim</span></div>
         <div class="id-role">Growth Lead · 8년차</div>
         <p class="id-lead">매출이 안 오르는 이유를 찾아서, 광고부터 CRM까지 직접 고쳐온 그로스 마케터입니다.</p>
-        <p class="id-bio">애드테크, OTT, 마이데이터 앱, 커머스를 거치며 8년 가까이 고객이 들어오고, 사고, 다시 오는 과정을 살피고 직접 개선해 왔습니다. 광고 예산은 월 최대 5천만 원(총 3~4억 원)까지 집행했고, 앱 MAU를 최대 3.9만까지 키웠습니다. 지금은 커머스 고객사를 최대 3곳까지 동시에 맡아 그로스 컨설팅을 하고, 자사 CRM 제품(리토스)을 기획하고 있습니다.</p>
+        <p class="id-bio">애드테크, OTT, 마이데이터 앱, 브랜드 그로스를 거치며 8년 가까이 고객이 들어오고, 사고, 다시 오는 과정을 살피고 직접 개선해 왔습니다. OTT 앱 런칭 4개월 만에 사용자 10만 명을 모았고, 광고 예산은 전체 약 10억 원을 계획해 실제 3~5억 원(월 최대 5천만 원)을 집행했습니다. 지금은 실무자 최대 3명과 함께 브랜드·서비스 고객사를 최대 3곳까지 동시에 맡아 그로스 컨설팅과 실행을 하고, 자사 CRM 제품(리토스)을 기획하고 있습니다.</p>
         <div class="id-contact">
           <a href="mailto:junchikim321@gmail.com">junchikim321@gmail.com</a>
           <a href="https://www.linkedin.com/in/junchi-kim" target="_blank" rel="noopener">LinkedIn</a>
@@ -283,7 +296,7 @@
       <div class="scorecards">
         <div class="sc"><div class="big">5천만 원</div><div class="cap">월 최대<br>광고 예산 집행</div></div>
         <div class="sc"><div class="big">3년+</div><div class="cap">팀 리딩<br>최대 7명</div></div>
-        <div class="sc"><div class="big up">2.4배</div><div class="cap">광고비 그대로<br>하루 구매 증가</div></div>
+        <div class="sc"><div class="big up">10만 명</div><div class="cap">OTT 앱 런칭<br>4개월 사용자</div></div>
         <div class="sc"><div class="big up">+116%</div><div class="cap">6개월 만의<br>재방문율 개선</div></div>
       </div>
     </div>
@@ -321,69 +334,111 @@
     <div class="cards">
 
       <article class="card" id="case-diagnosis">
-        <div class="card-top"><span class="card-no">CASE 01 · 커머스 브랜드 그로스 진단</span></div>
-        <h3 class="card-title">뭐부터 고쳐야 할지 모르겠다면</h3>
+        <div class="card-top"><span class="card-no">CASE 01 · 그로스 건강검진 시트 — 어디가 막혔는지 찾기</span><span class="contrib">설계·구현 직접</span></div>
+        <h3 class="card-title">어디서 매출이 새는지 모른다면</h3>
         <div class="story">
-          <p><span class="lb">상황</span>광고비를 줄였더니 매출이 흔들렸고, 어디부터 손대야 할지 정하지 못하고 있었습니다. 데이터를 볼 도구는 1년 전부터 다 있었는데 아무도 보지 않고 있었습니다.</p>
-          <p><span class="lb">판단</span>의견보다 숫자로 우선순위를 정해야 한다고 봤습니다. 83개 항목의 진단표로 고객이 들어오고, 사고, 다시 오는 과정 전체를 점수로 매겼습니다.</p>
-          <p><span class="lb">실행</span>쇼핑몰 주문 데이터, 광고 데이터, GA4를 직접 받아 28개 지표를 계산했습니다. 도구마다 숫자가 다르게 나오는 부분은 어느 쪽을 믿을지 기준부터 정했습니다.</p>
+          <p><span class="lb">상황</span>고객사 대부분이 광고, 쇼핑몰, GA4 숫자를 따로 보고 있어서 무엇부터 고칠지를 의견으로 정하고 있었습니다. 엑셀로 된 진단표가 있었지만 계산 오류가 있었고, 채점과 리포트를 매번 사람이 만들어야 했습니다.</p>
+          <p><span class="lb">판단</span>고객이 들어오고, 사고, 다시 오는 과정 전체를 같은 기준의 점수로 매겨야 우선순위를 숫자로 정할 수 있다고 봤습니다.</p>
+          <p><span class="lb">실행</span>진단표를 83문항, 1,000점 만점, 기초체력 3영역과 핵심 7영역으로 다시 짜고 지표 28개를 정의했습니다. 구글 시트와 Apps Script, Claude API로 옮겨 응답지 배포·회수, AI 채점 초안, 고객사 제출본 생성까지 자동으로 돌아가게 했고, 기존 계산 오류 6건을 고쳤습니다.</p>
         </div>
-        <div class="res-label">찾아낸 것</div>
+        <div class="res-label">만든 것</div>
         <div class="kpis">
-          <div class="kpi find"><span class="k-cap">가장 큰 매출 누수</span><span class="k-val">첫 구매 후 다시 안 사는 고객</span></div>
-          <div class="kpi find"><span class="k-cap">숨은 기회</span><span class="k-val">검색 고객의 가치가 광고 고객보다 훨씬 높음</span></div>
-          <div class="kpi find"><span class="k-cap">광고 축소의 영향</span><span class="k-val">신규 유입과 브랜드 검색이 함께 감소</span></div>
+          <div class="kpi find"><span class="k-cap">진단 문항</span><span class="k-val">83개 · 1,000점</span></div>
+          <div class="kpi find"><span class="k-cap">정의한 지표</span><span class="k-val">28개</span></div>
+          <div class="kpi find"><span class="k-cap">진단 영역</span><span class="k-val">기초 3 + 핵심 7</span></div>
         </div>
-        <p class="note">결론: 광고를 다시 늘리기보다, 이미 산 고객이 다시 오게 만드는 것이 1순위라고 제안했습니다. 고객사 요청에 따라 브랜드명과 세부 수치는 공개하지 않습니다.</p>
+        <p class="note">진단 결과와 수치는 고객사 계약상 공개하지 않습니다.</p>
         <div class="join"><em>합류하면</em>가장 먼저 지금 팀의 숫자로 어디가 막혀 있는지 정리하고, 무엇부터 고칠지 순서를 정합니다.</div>
-        <div class="tools"><span class="tool">카페24 주문 데이터</span><span class="tool">GA4</span><span class="tool">Meta 광고</span><span class="tool">Google 스프레드시트</span></div>
+        <div class="tools"><span class="tool">Google 스프레드시트</span><span class="tool">Apps Script</span><span class="tool">Claude API</span><span class="tool">GA4</span></div>
       </article>
 
-      <article class="card" id="case-fresh">
-        <div class="card-top"><span class="card-no">CASE 02 · 신선식품 커머스</span></div>
-        <h3 class="card-title">광고를 끄면 매출도 멈춘다면</h3>
+      <article class="card" id="case-aha">
+        <div class="card-top"><span class="card-no">CASE 02 · 아하모먼트 발굴 워크플로우 — 다시 사게 만드는 행동 찾기</span><span class="contrib">설계·구현 직접</span></div>
+        <h3 class="card-title">다시 사게 만드는 첫 경험을 모른다면</h3>
         <div class="story">
-          <p><span class="lb">상황</span>매출 대부분이 유료 광고에서 나왔고, 판매도 다른 쇼핑몰에 기대고 있어서 광고를 멈추면 매출도 같이 멈추는 구조였습니다.</p>
-          <p><span class="lb">판단</span>광고로 한 번 사고 끝나는 고객을 늘리기보다, 자사몰 회원으로 붙잡아 광고 없이도 다시 오게 만들어야 한다고 봤습니다.</p>
-          <p><span class="lb">실행</span>다른 쇼핑몰보다 자사몰에서 가입하고 살 이유를 만들어 회원가입을 늘렸고, 가입한 회원에게는 CRM 메시지로 재방문과 재구매를 유도했습니다. 동시에 상품 페이지와 구매 과정을 고쳐 더 쉽게 사도록 바꿨습니다.</p>
+          <p><span class="lb">상황</span>고객사마다 다시 사는 고객이 처음에 무엇을 샀고 어떤 행동을 했는지 감으로 판단하고 있었습니다. 분석을 해도 매번 사람이 며칠씩 데이터를 정리해야 했고, 결과가 CRM 캠페인으로 이어지지 않는 경우가 많았습니다.</p>
+          <p><span class="lb">판단</span>주문 데이터만 넣으면 같은 기준으로 돌아가는 도구로 만들기로 했습니다. 숫자는 코드가 계산하고, AI는 컬럼 정리·상품 분류·리포트 초안만 맡기고, 확정은 사람이 하도록 나눴습니다.</p>
+          <div><p><span class="lb">실행</span></p>
+            <ul>
+              <li>분석 지표 23종을 쇼핑몰 데이터로 뽑을 수 있는지 확인해 16개가 가능함을 확인하고, 우선순위대로 9개를 구현</li>
+              <li>구매 주기, 입문 상품, 첫 구매 후 90일 LTV, 함께 사는 조합 등을 계산하고, 재구매율이 평균의 2배 이상인 행동을 '유력' 가설로 판정</li>
+              <li>결과가 대표 보고용 리포트와 리토스 발송 조건 초안으로 바로 이어지게 연결</li>
+              <li>실제 주문 수천 건으로 검증하며 계산 방식 7건을 고침</li>
+            </ul>
+          </div>
         </div>
-        <div class="res-label">결과</div>
+        <div class="res-label">찾아낸 것 · 고객사 분석 예시</div>
         <div class="kpis">
-          <div class="kpi"><span class="k-cap">하루 평균 매출</span><span class="k-val"><span class="from">30만</span> → <span class="to">130만 원</span></span></div>
-          <div class="kpi"><span class="k-cap">방문당 비용</span><span class="k-val"><span class="from">800원</span> → <span class="to">200원</span></span></div>
-          <div class="kpi"><span class="k-cap">구매전환율</span><span class="k-val"><span class="from">2.3%</span> → <span class="to">5.4%</span></span></div>
-          <div class="kpi solo"><span class="k-cap">광고 외 유입 비중</span><span class="k-val">최대 80%</span></div>
+          <div class="kpi"><span class="k-cap">유제품 · 1→2회 구매 전환</span><span class="k-val"><span class="from">25.4%</span></span></div>
+          <div class="kpi"><span class="k-cap">같은 쇼핑몰 · 2→3회 구매 전환</span><span class="k-val"><span class="to">48.2%</span></span></div>
+          <div class="kpi"><span class="k-cap">구독형 브랜드 · 구독 전환 고객 LTV</span><span class="k-val"><span class="to">8.9배</span></span></div>
         </div>
-        <div class="join"><em>합류하면</em>광고 의존도가 높은 팀이라면, 자사몰 회원을 모으고 다시 오게 만드는 구조부터 만듭니다.</div>
-        <div class="tools"><span class="tool">GA4</span><span class="tool">Meta 광고</span><span class="tool">네이버 검색광고</span><span class="tool">카카오 광고</span><span class="tool">CRM 메시지</span></div>
+        <p class="note">두 번째 구매만 넘기면 다시 살 확률이 크게 오르는 구조라, 두 번째 구매를 아하모먼트로 정의했습니다. 분석 결과는 가설이며, 매출 효과는 캠페인 운영 후 확인합니다.</p>
+        <div class="join"><em>합류하면</em>고객이 왜 다시 오는지 모르는 팀이라면, 다시 사게 만드는 첫 경험부터 데이터로 찾아 CRM 조건으로 바로 연결합니다.</div>
+        <div class="tools"><span class="tool">주문 데이터</span><span class="tool">Apps Script</span><span class="tool">Claude API</span><span class="tool">리토스</span></div>
+      </article>
+
+      <article class="card" id="case-dairy">
+        <div class="card-top"><span class="card-no">CASE 03 · 유제품 쇼핑몰 (2024.06~10, 컨설팅·운영 대행)</span></div>
+        <h3 class="card-title">광고를 늘려도 광고 밖 매출이 그대로라면</h3>
+        <div class="story">
+          <p><span class="lb">상황</span>월 마케팅 예산 대부분을 Meta에, 그것도 할인 프로모션 때 몰아서 쓰고 있었고, 하루 매출은 30만 원대에 머물러 있었습니다. 목표는 온라인 매출 3배였습니다.</p>
+          <p><span class="lb">판단</span>광고를 키우되, 광고로 처음 알게 된 고객이 다음에는 검색, 직접 방문, 채널 메시지로 다시 사도록 이어 줘야 광고비가 늘어난 만큼 매출이 쌓인다고 봤습니다.</p>
+          <div><p><span class="lb">실행</span></p>
+            <ul>
+              <li>네이버 검색광고를 키워드 유형(브랜드·경쟁사·업종·문장형) 단위로 다시 짜고, 브랜드검색 랜딩과 소재를 A/B 테스트</li>
+              <li>가입 혜택과 쿠폰팩 3종으로 자사몰 가입과 첫 구매를 유도</li>
+              <li>카카오 친구톡·문자를 신규 가입, 첫 구매, 재구매, 장바구니, 쿠폰 보유 고객별로 요일 고정 스케줄로 운영</li>
+              <li>Google·카카오모먼트·당근까지 매체를 넓혀 테스트하고, 통합 대시보드에서 매일 확인</li>
+            </ul>
+          </div>
+        </div>
+        <div class="res-label">결과 · 착수 직전 3개월 → 마지막 3개월, 하루 평균</div>
+        <div class="kpis">
+          <div class="kpi"><span class="k-cap">하루 매출</span><span class="k-val"><span class="to">3.2배</span> <span class="from">36만→118만 원</span></span></div>
+          <div class="kpi"><span class="k-cap">광고 외 매출</span><span class="k-val"><span class="to">2.4배</span> <span class="from">34만→80만 원</span></span></div>
+          <div class="kpi"><span class="k-cap">하루 구매</span><span class="k-val"><span class="to">3.6배</span> <span class="from">8→29건</span></span></div>
+          <div class="kpi"><span class="k-cap">구매전환율</span><span class="k-val"><span class="to">+27%</span> <span class="from">3.0→3.8%</span></span></div>
+        </div>
+        <p class="note">같은 기간 하루 광고비도 3.7배(12만→44만 원) 늘었습니다. 광고비가 3.7배 느는 동안 광고 밖 매출이 2.4배 함께 늘어난 것이 이 사례의 핵심입니다.</p>
+        <div class="join"><em>합류하면</em>광고를 늘려야 하는 팀이라면, 광고로 들어온 고객이 다음엔 광고 없이 다시 사도록 검색·가입·메시지 흐름부터 같이 짭니다.</div>
+        <div class="tools"><span class="tool">네이버 검색광고</span><span class="tool">Meta 광고</span><span class="tool">친구톡·문자</span><span class="tool">통합 대시보드</span></div>
       </article>
 
       <article class="card" id="case-appliance">
-        <div class="card-top"><span class="card-no">CASE 03 · 소형가전 커머스</span></div>
-        <h3 class="card-title">광고비를 늘려도 매출이 안 오른다면</h3>
+        <div class="card-top"><span class="card-no">CASE 04 · 소형가전 브랜드 (2025.05~08, 스마트스토어 중심)</span></div>
+        <h3 class="card-title">광고 화면의 ROAS만 믿고 예산을 쓰고 있다면</h3>
         <div class="story">
-          <p><span class="lb">상황</span>ROAS만 보고 광고비를 늘리고 있었는데, 매출은 생각만큼 오르지 않았습니다.</p>
-          <p><span class="lb">판단</span>광고 효율보다 "들어온 고객이 얼마나 사고, 얼마나 쓰는지"가 문제라고 봤습니다. 그래서 ROAS 대신 구매율과 객단가, 두 숫자를 보기로 했습니다.</p>
-          <p><span class="lb">실행</span>랜딩 페이지, 상품 노출 순서, 메시지를 A/B 테스트로 하나씩 바꿔봤고, 효과가 확인된 것만 남겼습니다. 성과가 안 나는 광고 대상은 정리했고, 광고비는 그대로 뒀습니다.</p>
+          <p><span class="lb">상황</span>네이버 GFA 광고를 광고 화면에 뜨는 ROAS만 보고 운영하고 있었습니다. 같은 달 광고 화면 ROAS는 3,527%(전환 추적 30일, 기존 구매자 포함)였고, 스마트스토어에 광고로 들어온 고객의 실제 매출로 계산하면 289%였습니다. 기준에 따라 12배 차이가 나는데, 예산을 어느 숫자로 판단할지 정해진 기준이 없었습니다.</p>
+          <p><span class="lb">판단</span>예산 판단은 스마트스토어 실제 매출 기준으로 통일하고, 광고 화면 숫자는 소재·타깃끼리 비교할 때만 쓰기로 했습니다. ROAS가 높아도 구매가 몇 건 안 되는 그룹은 걸러냈습니다.</p>
+          <div><p><span class="lb">실행</span></p>
+            <ul>
+              <li>구매자 제외, 전환 추적 기간 30일 → 7일, 주말 새벽 노출 제한, 전환 0건 그룹 정리로 운영부터 정리</li>
+              <li>광고를 단일 품목과 묶음·부속품으로 나눠 비교해, 묶음·부속품 쪽 ROAS가 464~524%로 단일 품목(0~392%)보다 꾸준히 높은 것을 확인하고 광고 구조를 재편, 부속품 캠페인 신설</li>
+              <li>구매 이력 고객 세그먼트를 광고 타깃으로 써서 전환율 18.2%(전체 1.59%의 11배)를 확인하고, 문구·이미지·CTA를 나눠 소재 A/B 테스트</li>
+              <li>소재·그룹 평가 기준을 ROAS 단독에서 'ROAS × 구매 수'로 바꿈</li>
+            </ul>
+          </div>
         </div>
-        <div class="res-label">결과 · 광고비를 늘리지 않고</div>
+        <div class="res-label">결과 · 착수 첫 달(5월) → 이후 2개월(6~7월) 평균, 스마트스토어 실제 매출 기준</div>
         <div class="kpis">
-          <div class="kpi"><span class="k-cap">ROAS</span><span class="k-val"><span class="from">300%</span> → <span class="to">400%</span></span></div>
-          <div class="kpi"><span class="k-cap">CAC</span><span class="k-val"><span class="from">703원</span> → <span class="to">485원</span></span></div>
-          <div class="kpi"><span class="k-cap">구매전환율</span><span class="k-val"><span class="from">2.72%</span> → <span class="to">3.84%</span></span></div>
-          <div class="kpi"><span class="k-cap">하루 평균 구매</span><span class="k-val"><span class="from">8건</span> → <span class="to">19건</span></span></div>
+          <div class="kpi"><span class="k-cap">하루 광고비</span><span class="k-val"><span class="to">−21%</span> <span class="from">61만→48만 원</span></span></div>
+          <div class="kpi"><span class="k-cap">광고 유입 하루 매출</span><span class="k-val"><span class="to">유지(+2%)</span> <span class="from">175만→179만 원</span></span></div>
+          <div class="kpi"><span class="k-cap">실제 매출 기준 ROAS</span><span class="k-val"><span class="to">+29%</span> <span class="from">289→374%</span></span></div>
         </div>
-        <div class="join"><em>합류하면</em>광고 효율은 나오는데 매출이 안 느는 팀이라면, 광고비보다 구매율과 객단가부터 봅니다.</div>
-        <div class="tools"><span class="tool">GA4</span><span class="tool">Meta 광고</span><span class="tool">A/B 테스트</span><span class="tool">퍼널 대시보드</span></div>
+        <p class="note">광고비를 21% 줄이고도 매출은 그대로 지켰습니다. 계절 가전이라 8월에는 스마트스토어 전체 매출이 전달의 절반 이하로 줄었고 광고 ROAS도 225%로 내려갔습니다. 함께 제안한 CRM 시퀀스는 실행까지 가지 못했습니다.</p>
+        <div class="join"><em>합류하면</em>광고 화면 숫자로 예산을 나누는 팀이라면, 실제 매출 기준과 구매 수를 함께 보는 기준부터 다시 잡습니다.</div>
+        <div class="tools"><span class="tool">네이버 GFA</span><span class="tool">ADVoost</span><span class="tool">스마트스토어 통계</span><span class="tool">A/B 테스트</span></div>
       </article>
 
       <article class="card" id="case-mydata">
-        <div class="card-top"><span class="card-no">CASE 04 · 마이데이터 앱 마이디</span><span class="contrib">기여도 80%</span></div>
+        <div class="card-top"><span class="card-no">CASE 05 · 마이데이터 앱 마이디</span><span class="contrib">기여도 80%</span></div>
         <h3 class="card-title">가입은 느는데 다시 오지 않는다면</h3>
         <div class="story">
           <p><span class="lb">상황</span>목표가 "신규 가입 수"여서, 가입은 늘어도 다시 들어오는 사람이 적었습니다.</p>
           <p><span class="lb">판단</span>가입만 늘리면 비용만 커진다고 봤습니다. 보는 숫자를 재방문율로 바꾸고, 다시 들어오는 사람들이 처음에 무엇을 했는지부터 찾았습니다.</p>
-          <p><span class="lb">실행</span>온보딩을 끝내고 첫 핵심 기능을 써본 사람이 다시 들어온다는 걸 확인했습니다. 그래서 온보딩을 A/B 테스트로 여러 번 바꿔보고, 효과가 확인된 것만 남겼습니다. 광고 비용과 재방문율은 한 대시보드에서 같이 보도록 묶었습니다.</p>
+          <p><span class="lb">측정</span>회사에서 처음으로 AppsFlyer를 도입했습니다. Firebase와 함께 어떤 행동을 이벤트로 남길지 설계하고, 지표를 정의하고, 개발팀과 앱 연동까지 맡았습니다.</p>
+          <p><span class="lb">실행</span>온보딩을 끝내고 첫 핵심 기능을 써본 사람이 다시 들어온다는 걸 확인했습니다. 온보딩을 A/B 테스트로 여러 번 바꿔보고, 효과가 확인된 것만 남겼습니다. 광고 비용과 재방문율은 한 대시보드에서 같이 보도록 묶었습니다.</p>
         </div>
         <div class="res-label">결과 · 집중 개선 6개월</div>
         <div class="kpis">
@@ -395,56 +450,64 @@
         <div class="kpis">
           <div class="kpi"><span class="k-cap">앱 MAU</span><span class="k-val"><span class="from">1.3만</span> → <span class="to">최대 3.9만</span></span></div>
           <div class="kpi"><span class="k-cap">AOS 누적 설치</span><span class="k-val"><span class="from">13만</span> → <span class="to">24만</span></span></div>
-          <div class="kpi solo"><span class="k-cap">퇴사 시점 DAU</span><span class="k-val">입사 때보다 +77%</span></div>
+          <div class="kpi solo"><span class="k-cap">퇴사 시점 DAU</span><span class="k-val">입사 대비 +77%</span></div>
         </div>
         <div class="join"><em>합류하면</em>가입자는 느는데 활성 사용자가 안 느는 팀이라면, 다시 오는 사람들의 첫 행동부터 찾습니다.</div>
-        <div class="tools"><span class="tool">GA4</span><span class="tool">AppsFlyer</span><span class="tool">Google Data Studio</span></div>
+        <div class="tools"><span class="tool">AppsFlyer</span><span class="tool">Firebase</span><span class="tool">GA4</span><span class="tool">Google Data Studio</span></div>
       </article>
 
       <article class="card" id="case-retous">
-        <div class="card-top"><span class="card-no">CASE 05 · 리토스 CRM 도입 사례</span><span class="contrib">기여도 60%</span></div>
+        <div class="card-top"><span class="card-no">CASE 06 · 리토스(Retous) CRM 제품 기획과 첫 고객사 운영</span><span class="contrib">기여도 60%</span></div>
         <h3 class="card-title">CRM 툴은 있는데 못 쓰고 있다면</h3>
         <div class="story">
           <p><span class="lb">상황</span>작은 쇼핑몰은 CRM 툴이 있어도 누구에게, 언제, 무엇을 보내야 할지 몰라서 못 쓰는 경우가 많았습니다.</p>
           <p><span class="lb">판단</span>툴을 파는 게 아니라, 마케터가 아니어도 바로 쓸 수 있게 "보낼 대상과 조건"을 미리 만들어두는 게 답이라고 봤습니다.</p>
-          <p><span class="lb">실행</span>고객을 구매 여정에 따라 7단계로 나누고, 단계마다 보낼 메시지(재구매, 이탈 고객 복귀, 함께 사면 좋은 상품 제안)를 설계했습니다. SQL을 몰라도 화면에서 발송 대상을 고를 수 있도록 조건 27종을 만들었고, 실제 데이터에서 제대로 작동하는지 하나씩 확인했습니다.</p>
+          <p><span class="lb">실행</span>고객을 구매 여정에 따라 7단계로 나누고, SQL을 몰라도 화면에서 발송 대상을 고를 수 있는 조건 50종을 만들어 실제 데이터에서 하나씩 검증했습니다. 첫 고객사 베타 운영(2025.04~2026.03)은 직접 맡아 퍼널별 캠페인 설계, 통합 테스트, 라이브, 운영 회고까지 진행했고, 회고에서 나온 문제는 캠페인 구조 개선으로 이어 갔습니다.</p>
         </div>
-        <div class="res-label">결과 · 유제품 쇼핑몰, 4개월</div>
+        <div class="res-label">만든 것</div>
         <div class="kpis">
-          <div class="kpi"><span class="k-cap">매출</span><span class="k-val"><span class="from">37만</span> → <span class="to">135만 원</span></span></div>
-          <div class="kpi"><span class="k-cap">하루 평균 구매</span><span class="k-val"><span class="from">9건</span> → <span class="to">33건</span></span></div>
+          <div class="kpi find"><span class="k-cap">고객 여정</span><span class="k-val">7단계</span></div>
+          <div class="kpi find"><span class="k-cap">발송 조건</span><span class="k-val">50종</span></div>
+          <div class="kpi find"><span class="k-cap">연동 고객사</span><span class="k-val">3곳</span></div>
         </div>
-        <p class="note">* 제 개인 운영 성과가 아니라 제품 도입 검증 결과입니다. 현재 고객사 3곳에 연동되어 운영 중입니다.</p>
+        <p class="note">고객사별 성과는 도입 전후를 같은 지표로 쌓고 있습니다.</p>
         <div class="join"><em>합류하면</em>CRM을 도입만 해두고 못 쓰는 팀이라면, 누구에게 언제 무엇을 보낼지부터 먼저 짜드립니다.</div>
-        <div class="tools"><span class="tool">리토스</span><span class="tool">알림톡·문자</span><span class="tool">카페24·아임웹 연동</span><span class="tool">SQL</span></div>
+        <div class="tools"><span class="tool">리토스</span><span class="tool">알림톡·브랜드메시지</span><span class="tool">카페24·아임웹 연동</span><span class="tool">SQL</span></div>
       </article>
 
-      <article class="card" id="case-blog">
-        <div class="card-top"><span class="card-no">CASE 06 · 블로그 콘텐츠 자동 발행</span><span class="contrib">기여도 100%</span></div>
-        <h3 class="card-title">콘텐츠를 꾸준히 낼 사람이 없다면</h3>
-        <div class="story">
-          <p><span class="lb">상황</span>회사 블로그가 1년 넘게 월 조회수 10~50에 머물러 있었고, 글을 꾸준히 쓸 사람이 없었습니다.</p>
-          <p><span class="lb">판단</span>사람이 매일 쓰는 방식은 오래 못 간다고 봤습니다. 주제를 고르는 것부터 발행까지 자동으로 돌아가고, 사람은 검수만 하는 구조를 만들기로 했습니다.</p>
-          <div><p><span class="lb">실행</span></p>
-            <ul>
-              <li>주제 선정 → 원고 작성 → 품질 검사 → 발행까지 평일마다 자동으로 돌아가게 설계 (하루 4편)</li>
-              <li>네이버 검색광고 API를 연결해, 실제로 검색량이 있는 키워드만 골라 주제로 쓰게 함</li>
-              <li>같은 제목이 반복되거나 근거 없는 수치를 쓴 원고는 자동으로 걸러냄</li>
-              <li>네이버 블로그는 임시저장까지 자동으로 올리고, 발행 버튼만 사람이 누르게 함 (광고 계정이 묶인 아이디라 계정 제재 위험을 막기 위해)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="res-label">결과 · 4개월</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM TOOLS -->
+<section class="teamtools" id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">TEAM TOOLS</div>
+      <h2 class="sec-title">반복되는 일은 팀이 같이 쓰는 도구로 만듭니다</h2>
+      <p class="sec-desc">마케팅팀에서 직접 설계하고 만들어 실제 업무에 쓰고 있는 도구들입니다. 위 사례에 나온 도구는 뺐습니다.</p>
+    </div>
+    <div class="tt-grid">
+      <div class="tt feat">
+        <h4>블로그 콘텐츠 자동 발행</h4>
+        <p>회사 블로그가 1년 넘게 월 조회수 10~50에 머물러 있었고 글을 꾸준히 쓸 사람이 없었습니다. 사람은 검수만 하고 나머지는 알아서 돌아가는 구조로 만들었습니다.</p>
+        <ul>
+          <li>네이버 검색광고 API로 검색량 있는 키워드를 모아 주제로 사용 → 원고 작성 → 품질 검사(반복 제목·근거 없는 수치 자동 차단) → GitHub 블로그 업로드까지 평일 하루 4편 자동</li>
+          <li>네이버 블로그는 임시저장까지 자동, 발행 버튼만 사람이 누름(광고 계정이 묶인 아이디라 계정 제재 위험 차단)</li>
+        </ul>
         <div class="kpis">
-          <div class="kpi solo"><span class="k-cap">자동 발행</span><span class="k-val">약 360편</span></div>
-          <div class="kpi solo"><span class="k-cap">네이버 블로그 이관</span><span class="k-val">17편</span></div>
-          <div class="kpi solo"><span class="k-cap">네이버 유입 비중</span><span class="k-val">약 50%</span></div>
+          <div class="kpi find"><span class="k-cap">수집 키워드</span><span class="k-val">695건</span></div>
+          <div class="kpi find"><span class="k-cap">4개월 자동 발행</span><span class="k-val">약 360편</span></div>
+          <div class="kpi find"><span class="k-cap">네이버 이관 후 네이버 유입 비중</span><span class="k-val">약 50%</span></div>
         </div>
-        <p class="note">구글 색인이 거의 되지 않아 네이버로 채널을 넓혔고, 새 회사 블로그가 생기면서 운영을 마쳤습니다. "검색 수요를 먼저 확인하고, 채널을 고르고, 자동화는 그다음"이라는 순서를 얻었습니다.</p>
-        <div class="join"><em>합류하면</em>콘텐츠 인력이 부족한 팀이라면, 사람은 검수만 하고 나머지는 알아서 돌아가는 구조를 만듭니다.</div>
-        <div class="tools"><span class="tool">Apps Script</span><span class="tool">Claude API</span><span class="tool">네이버 검색광고 API</span><span class="tool">Playwright</span><span class="tool">GA4</span></div>
-      </article>
-
+        <p class="note">구글 색인이 잘 되지 않아 네이버로 채널을 넓혔고, 새 회사 블로그가 생기면서 운영을 마쳤습니다. "검색 수요 확인 → 채널 선택 → 자동화" 순서가 맞다는 것을 배웠습니다.</p>
+      </div>
+      <div class="tt"><h4>CRM 메시지 카피 AI 워크플로우</h4><p>발송 조건 제안, 알림톡·브랜드메시지 문구와 이미지 지시문, 카카오 심사 규정 검사, 고객사 승인까지 한 워크북에서 처리합니다. 한 고객사 캠페인 <b>41개·메시지 101개</b>를 만들었습니다.</p></div>
+      <div class="tt"><h4>고객사 통합 대시보드</h4><p>매체별 성과, 전환 단계, D+1~D+30 재방문을 한 시트에서 봅니다. 2024년부터 <b>고객사 6곳</b>에 맞춰 만들어 운영 판단에 썼습니다.</p></div>
+      <div class="tt"><h4>GTM 표준 컨테이너</h4><p>아임웹·카페24 쇼핑몰의 구매 이벤트 수집 설정을 표준으로 만들어 새 고객사에 거의 수정 없이 적용합니다. 이커머스 이벤트 <b>5~8종</b>.</p></div>
+      <div class="tt"><h4>리드 퍼널과 통합 관리 시트</h4><p>흩어진 리드 시트 3개를 합치고, 리드부터 계약까지 단계와 단계별 기준을 정했습니다. 문의 폼 응답은 자동으로 쌓입니다.</p></div>
+      <div class="tt"><h4>리토스 고객사 온보딩 운영 체계</h4><p>계약 후 첫 발송까지 30일을 10단계로 나누고, 단계마다 넘어갈 조건과 시범 발송(대상의 10~20%) 규칙을 정했습니다.</p></div>
+      <div class="tt"><h4>광고 소재 제작 프로세스</h4><p>고객의 동기·감정·맥락에서 핵심 메시지를 뽑아 콘셉트 카드, 디자이너 브리핑, 검수까지 4단계로 표준화했습니다.</p></div>
     </div>
   </div>
 </section>
@@ -457,9 +520,9 @@
       <h2 class="sec-title">직접 할 수 있는 것들</h2>
     </div>
     <div class="skill-grid">
-      <div class="skill"><h4>광고와 CRM 실행</h4><p>광고 운영부터 알림톡·문자 자동 발송 설계까지 직접 합니다.</p><div class="tags"><span>Meta 광고</span><span>네이버 검색광고</span><span>카카오 광고</span><span>알림톡·문자</span><span>A/B 테스트</span></div></div>
-      <div class="skill"><h4>숫자 확인</h4><p>직접 데이터를 뽑아 확인합니다. CRM 발송 조건 27종이 실제 데이터에서 제대로 작동하는지 검증했고, 어긋난 4건은 원인까지 찾아 고쳤습니다.</p><div class="tags"><span>GA4</span><span>SQL</span><span>코호트·퍼널 분석</span><span>GTM 이벤트 설계</span><span>AppsFlyer</span></div></div>
-      <div class="skill"><h4>반복 업무 자동화</h4><p>광고·GA4 성과를 매일 자동으로 모아 알림을 보내고, 메시지 문구 작성처럼 반복되는 일을 자동으로 돌아가게 만듭니다.</p><div class="tags"><span>Apps Script</span><span>Meta·GA4 API</span><span>Claude API</span><span>Slack 알림</span></div></div>
+      <div class="skill"><h4>광고와 CRM 실행</h4><p>광고 운영부터 알림톡·문자 자동 발송 설계까지 직접 합니다.</p><div class="tags"><span>Meta 광고</span><span>Google 광고</span><span>네이버 검색광고</span><span>카카오 광고</span><span>알림톡·문자</span><span>A/B 테스트</span></div></div>
+      <div class="skill"><h4>숫자 확인</h4><p>직접 데이터를 뽑아 확인합니다. CRM 발송 조건 50종이 실제 데이터에서 제대로 작동하는지 검증했고, 어긋난 4건은 원인까지 찾아 고쳤습니다.</p><div class="tags"><span>GA4</span><span>SQL</span><span>코호트·퍼널 분석</span><span>GTM 이벤트 설계</span><span>AppsFlyer·Firebase</span></div></div>
+      <div class="skill"><h4>반복 업무 자동화</h4><p>분석·문구 제작·성과 집계처럼 반복되는 일을 팀이 같이 쓰는 도구로 만듭니다. 계산은 코드가, 초안은 AI가, 확정은 사람이 하도록 나눕니다.</p><div class="tags"><span>Apps Script</span><span>Meta·GA4 API</span><span>Claude API</span><span>Slack 알림</span></div></div>
     </div>
   </div>
 </section>
@@ -472,11 +535,11 @@
       <h2 class="sec-title">경력</h2>
     </div>
     <ol class="tl">
-      <li class="now"><div class="when">2024.06 ~ 현재</div><div class="who">리인벤팅<span>마케팅팀 Team Lead</span></div><div class="what">커머스 고객사 그로스 컨설팅과 실행(최대 3곳 동시 운영), 자사 CRM 제품(리토스) 기획</div></li>
-      <li><div class="when">2023.04 ~ 2024.05</div><div class="who">퍼스널에이아이 (구 에스앤피랩)<span>영업본부 마케팅&amp;운영 과장</span></div><div class="what">마이데이터 거래 앱 마이디 그로스 리딩 (MAU 최대 3.9만)</div></li>
-      <li><div class="when">2022.01 ~ 2023.04</div><div class="who">iHQ<span>모바일마케팅팀 대리</span></div><div class="what">신규 OTT 서비스 런칭 마케팅, 디지털 광고 예산 총 3~4억 원(월 최대 5천만 원) 집행</div></li>
+      <li class="now"><div class="when">2024.06 ~ 현재</div><div class="who">리인벤팅<span>마케팅팀 Team Lead</span></div><div class="what">실무자 최대 3명 리딩, 브랜드·서비스 그로스 컨설팅과 실행(최대 3곳 동시 운영), 자사 CRM 제품(리토스) 기획, 분석·운영 도구 구축</div></li>
+      <li><div class="when">2023.04 ~ 2024.05</div><div class="who">퍼스널에이아이 (구 에스앤피랩)<span>사업본부 마케팅·운영 과장(파트장)</span></div><div class="what">마이데이터 거래 앱 마이디 그로스 리딩 (MAU 최대 3.9만)</div></li>
+      <li><div class="when">2022.01 ~ 2023.04</div><div class="who">iHQ<span>모바일마케팅팀 대리</span></div><div class="what">OTT 바바요 런칭 마케팅, 4개월 만에 사용자 10만 명. 실무 최대 7명 리딩, 광고 예산 3~5억 원 집행(월 최대 5천만 원)</div></li>
       <li><div class="when">2021.06 ~ 2021.11</div><div class="who">알브이핀<span>브랜드마케팅팀 마케팅 파트장</span></div><div class="what">소셜벤처 소비재 브랜드 마케팅과 외부 브랜드 마케팅 컨설팅</div></li>
-      <li><div class="when">2019.02 ~ 2021.05</div><div class="who">모티브인텔리전스<span>IMC팀 매니저</span></div><div class="what">애드테크 환경에서 데이터·타깃 기반 디지털 미디어 플래닝</div></li>
+      <li><div class="when">2019.02 ~ 2021.05</div><div class="who">모티브인텔리전스<span>IMC팀 매니저</span></div><div class="what">애드테크 환경에서 광고주 캠페인 운영, 타깃 A/B와 시간대 예산 조정으로 기존 제안 대비 CPC 22~58% 감소</div></li>
       <li><div class="when">2017.11 ~ 2018.11</div><div class="who">오렌지클락프로덕션<span>Producer team PD</span></div><div class="what">영상 광고 제작 프로젝트 총괄, 대행사·스태프·출연진 사이 일정과 결과물 조율</div></li>
     </ol>
   </div>
