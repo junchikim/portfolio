@@ -295,7 +295,7 @@
       </div>
       <div class="scorecards">
         <div class="sc"><div class="big">5천만 원</div><div class="cap">월 최대<br>광고 예산 집행</div></div>
-        <div class="sc"><div class="big">3년+</div><div class="cap">팀 리딩<br>최대 7명</div></div>
+        <div class="sc"><div class="big">4년+</div><div class="cap">파트장·팀장 경력<br>(소규모 조직, 실무 병행)</div></div>
         <div class="sc"><div class="big up">10만 명</div><div class="cap">OTT 앱 런칭<br>4개월 사용자</div></div>
         <div class="sc"><div class="big up">+116%</div><div class="cap">6개월 만의<br>재방문율 개선</div></div>
       </div>
@@ -352,8 +352,34 @@
         <div class="tools"><span class="tool">Google 스프레드시트</span><span class="tool">Apps Script</span><span class="tool">Claude API</span><span class="tool">GA4</span></div>
       </article>
 
+      <article class="card" id="case-template">
+        <div class="card-top"><span class="card-no">CASE 02 · 그로스 진단 템플릿 — 원본 데이터로 진단하고 검수하기</span><span class="contrib">설계·구현 직접</span></div>
+        <h3 class="card-title">분석 문서를 받고도 무엇을 할지 모른다면</h3>
+        <div class="story">
+          <p><span class="lb">상황</span>고객사마다 AI로 분석 문서를 빠르게 만들고 있었지만, 고객사는 문서를 읽고도 무엇부터 할지 몰랐습니다. 한 고객사의 분석 문서 9건을 대조해 보니 같은 지표가 문서마다 다르게 적힌 곳을 포함해 문제가 8건 나왔고, 고객사가 바뀔 때마다 분석 틀과 용어도 조금씩 달라졌습니다.</p>
+          <p><span class="lb">판단</span>문서를 빨리 만드는 일은 AI에 맡기되, 문서에 옮겨진 숫자가 맞는지는 자동으로 검사해야 한다고 봤습니다. 그리고 고객사가 받는 첫 장에는 분석이 아니라 할 일이 있어야 한다고 봤습니다.</p>
+          <div><p><span class="lb">실행</span></p>
+            <ul>
+              <li>퍼널 5단계, 지표 정의서, 판정 규칙 11개를 업계에서 통용되는 말로 정리하고, 고객사마다 바뀌는 값은 설정 파일 하나(기간·객단가·공헌이익률 등)에 모음. 매장 예약형 브랜드와 온라인 커머스도 같은 계산 방식을 씀</li>
+              <li>광고 관리자·쇼핑몰 주문·GA4 원본을 넣으면 지표 계산, 측정 점검, 진단 문서 5종, 자동 검수까지 한 번에 돌아가게 구현. 문서 속 숫자를 손으로 고치면 검수에서 걸림</li>
+              <li>첫 장에는 지금 상태 한 문장, 핵심 숫자, 할 일 3개(누가·언제까지·어떤 숫자를 얼마로)만 담고, 빈칸이 있으면 내보내지 않음</li>
+              <li>커머스 고객사의 광고 원본으로 검증하다가 기존 분석이 놓친 데이터 문제(하루치 광고비 누락 등)를 찾아, 다음 고객사부터 자동으로 잡히는 점검 규칙으로 추가</li>
+            </ul>
+          </div>
+        </div>
+        <div class="res-label">찾아낸 것 · 실데이터 검증</div>
+        <div class="kpis">
+          <div class="kpi find"><span class="k-cap">검증한 광고 원본</span><span class="k-val">약 2.4만 행</span></div>
+          <div class="kpi"><span class="k-cap">하루 누락으로 빠진 광고비</span><span class="k-val"><span class="to">4.3%</span></span></div>
+          <div class="kpi find"><span class="k-cap">따로 다시 계산한 값과 차이</span><span class="k-val">0원</span></div>
+        </div>
+        <p class="note">그래서 진단은 "성과가 좋은가"보다 "받은 데이터가 전체인가"부터 묻도록, 측정 점검을 지표 계산 앞에 뒀습니다.</p>
+        <div class="join"><em>합류하면</em>분석 문서는 많은데 실행으로 이어지지 않는 팀이라면, 숫자의 출처와 검수 기준부터 고정하고 첫 장을 할 일 3개로 바꿉니다.</div>
+        <div class="tools"><span class="tool">Python</span><span class="tool">광고 관리자 원본</span><span class="tool">쇼핑몰 주문</span><span class="tool">GA4</span></div>
+      </article>
+
       <article class="card" id="case-aha">
-        <div class="card-top"><span class="card-no">CASE 02 · 아하모먼트 발굴 워크플로우 — 다시 사게 만드는 행동 찾기</span><span class="contrib">설계·구현 직접</span></div>
+        <div class="card-top"><span class="card-no">CASE 03 · 아하모먼트 발굴 워크플로우 — 다시 사게 만드는 행동 찾기</span><span class="contrib">설계·구현 직접</span></div>
         <h3 class="card-title">다시 사게 만드는 첫 경험을 모른다면</h3>
         <div class="story">
           <p><span class="lb">상황</span>고객사마다 다시 사는 고객이 처음에 무엇을 샀고 어떤 행동을 했는지 감으로 판단하고 있었습니다. 분석을 해도 매번 사람이 며칠씩 데이터를 정리해야 했고, 결과가 CRM 캠페인으로 이어지지 않는 경우가 많았습니다.</p>
@@ -379,7 +405,7 @@
       </article>
 
       <article class="card" id="case-dairy">
-        <div class="card-top"><span class="card-no">CASE 03 · 유제품 쇼핑몰 (2024.06~10, 컨설팅·운영 대행)</span></div>
+        <div class="card-top"><span class="card-no">CASE 04 · 유제품 쇼핑몰 (2024.06~10, 컨설팅·운영 대행)</span></div>
         <h3 class="card-title">광고를 늘려도 광고 밖 매출이 그대로라면</h3>
         <div class="story">
           <p><span class="lb">상황</span>월 마케팅 예산 대부분을 Meta에, 그것도 할인 프로모션 때 몰아서 쓰고 있었고, 하루 매출은 30만 원대에 머물러 있었습니다. 목표는 온라인 매출 3배였습니다.</p>
@@ -406,7 +432,7 @@
       </article>
 
       <article class="card" id="case-appliance">
-        <div class="card-top"><span class="card-no">CASE 04 · 소형가전 브랜드 (2025.05~08, 스마트스토어 중심)</span></div>
+        <div class="card-top"><span class="card-no">CASE 05 · 소형가전 브랜드 (2025.05~08, 스마트스토어 중심)</span></div>
         <h3 class="card-title">광고 화면의 ROAS만 믿고 예산을 쓰고 있다면</h3>
         <div class="story">
           <p><span class="lb">상황</span>네이버 GFA 광고를 광고 화면에 뜨는 ROAS만 보고 운영하고 있었습니다. 같은 달 광고 화면 ROAS는 3,527%(전환 추적 30일, 기존 구매자 포함)였고, 스마트스토어에 광고로 들어온 고객의 실제 매출로 계산하면 289%였습니다. 기준에 따라 12배 차이가 나는데, 예산을 어느 숫자로 판단할지 정해진 기준이 없었습니다.</p>
@@ -432,7 +458,7 @@
       </article>
 
       <article class="card" id="case-mydata">
-        <div class="card-top"><span class="card-no">CASE 05 · 마이데이터 앱 마이디</span><span class="contrib">기여도 80%</span></div>
+        <div class="card-top"><span class="card-no">CASE 06 · 마이데이터 앱 마이디</span><span class="contrib">기여도 80%</span></div>
         <h3 class="card-title">가입은 느는데 다시 오지 않는다면</h3>
         <div class="story">
           <p><span class="lb">상황</span>목표가 "신규 가입 수"여서, 가입은 늘어도 다시 들어오는 사람이 적었습니다.</p>
@@ -457,7 +483,7 @@
       </article>
 
       <article class="card" id="case-retous">
-        <div class="card-top"><span class="card-no">CASE 06 · 리토스(Retous) CRM 제품 기획과 첫 고객사 운영</span><span class="contrib">기여도 60%</span></div>
+        <div class="card-top"><span class="card-no">CASE 07 · 리토스(Retous) CRM 제품 기획과 첫 고객사 운영</span><span class="contrib">기여도 60%</span></div>
         <h3 class="card-title">CRM 툴은 있는데 못 쓰고 있다면</h3>
         <div class="story">
           <p><span class="lb">상황</span>작은 쇼핑몰은 CRM 툴이 있어도 누구에게, 언제, 무엇을 보내야 할지 몰라서 못 쓰는 경우가 많았습니다.</p>
@@ -506,8 +532,8 @@
       <div class="tt"><h4>고객사 통합 대시보드</h4><p>매체별 성과, 전환 단계, D+1~D+30 재방문을 한 시트에서 봅니다. 2024년부터 <b>고객사 6곳</b>에 맞춰 만들어 운영 판단에 썼습니다.</p></div>
       <div class="tt"><h4>GTM 표준 컨테이너</h4><p>아임웹·카페24 쇼핑몰의 구매 이벤트 수집 설정을 표준으로 만들어 새 고객사에 거의 수정 없이 적용합니다. 이커머스 이벤트 <b>5~8종</b>.</p></div>
       <div class="tt"><h4>리드 퍼널과 통합 관리 시트</h4><p>흩어진 리드 시트 3개를 합치고, 리드부터 계약까지 단계와 단계별 기준을 정했습니다. 문의 폼 응답은 자동으로 쌓입니다.</p></div>
-      <div class="tt"><h4>리토스 고객사 온보딩 운영 체계</h4><p>계약 후 첫 발송까지 30일을 10단계로 나누고, 단계마다 넘어갈 조건과 시범 발송(대상의 10~20%) 규칙을 정했습니다.</p></div>
-      <div class="tt"><h4>광고 소재 제작 프로세스</h4><p>고객의 동기·감정·맥락에서 핵심 메시지를 뽑아 콘셉트 카드, 디자이너 브리핑, 검수까지 4단계로 표준화했습니다.</p></div>
+      <div class="tt"><h4>고객사 온보딩 통합 워크북</h4><p>온보딩 브리프 한 곳만 채우면 고객사 설정 시트와 캠페인 브리프에 자동 반영되고, 표준 캠페인 마스터와 상태 보드로 고객사가 늘어도 혼자 운영할 수 있게 CRM 카피 워크플로우와 묶었습니다. 계약 후 첫 발송까지 30일 10단계 기준 포함.</p></div>
+      <div class="tt"><h4>광고 소재 제작 자동화</h4><p>고객의 구매 동기·감정에서 핵심 메시지를 뽑아 소재 콘셉트를 정하고, Claude·Gemini API로 소재별 문구와 이미지 지시문 3종을 만들어 디자이너 전달 시트로 넘깁니다. 수정 방향은 선택형 피드백으로 남겨 다음 소재에 씁니다.</p></div>
     </div>
   </div>
 </section>
@@ -520,9 +546,9 @@
       <h2 class="sec-title">직접 할 수 있는 것들</h2>
     </div>
     <div class="skill-grid">
-      <div class="skill"><h4>광고와 CRM 실행</h4><p>광고 운영부터 알림톡·문자 자동 발송 설계까지 직접 합니다.</p><div class="tags"><span>Meta 광고</span><span>Google 광고</span><span>네이버 검색광고</span><span>카카오 광고</span><span>알림톡·문자</span><span>A/B 테스트</span></div></div>
-      <div class="skill"><h4>숫자 확인</h4><p>직접 데이터를 뽑아 확인합니다. CRM 발송 조건 50종이 실제 데이터에서 제대로 작동하는지 검증했고, 어긋난 4건은 원인까지 찾아 고쳤습니다.</p><div class="tags"><span>GA4</span><span>SQL</span><span>코호트·퍼널 분석</span><span>GTM 이벤트 설계</span><span>AppsFlyer·Firebase</span></div></div>
-      <div class="skill"><h4>반복 업무 자동화</h4><p>분석·문구 제작·성과 집계처럼 반복되는 일을 팀이 같이 쓰는 도구로 만듭니다. 계산은 코드가, 초안은 AI가, 확정은 사람이 하도록 나눕니다.</p><div class="tags"><span>Apps Script</span><span>Meta·GA4 API</span><span>Claude API</span><span>Slack 알림</span></div></div>
+      <div class="skill"><h4>광고와 CRM 실행</h4><p>광고 운영부터 알림톡·문자 자동 발송 설계까지 직접 합니다.</p><div class="tags"><span>Meta 광고</span><span>Google 광고</span><span>네이버 검색광고·GFA</span><span>카카오 광고</span><span>알림톡·문자</span><span>A/B 테스트</span></div></div>
+      <div class="skill"><h4>숫자 확인</h4><p>직접 데이터를 뽑아 확인합니다. CRM 발송 조건 50종이 실제 데이터에서 제대로 작동하는지 검증했고, 어긋난 4건은 원인까지 찾아 고쳤습니다.</p><div class="tags"><span>GA4</span><span>GTM 이벤트 설계</span><span>Cafe24·아임웹 데이터</span><span>SQL(조건 설계·검증)</span><span>코호트·퍼널 분석</span><span>AppsFlyer·Firebase</span></div></div>
+      <div class="skill"><h4>반복 업무 자동화</h4><p>분석·문구 제작·성과 집계처럼 반복되는 일을 팀이 같이 쓰는 도구로 만듭니다. 계산은 코드가, 초안은 AI가, 확정은 사람이 하도록 나눕니다.</p><div class="tags"><span>Apps Script</span><span>Claude API</span><span>Gemini API</span><span>Meta·GA4 API</span><span>Slack 알림</span></div></div>
     </div>
   </div>
 </section>
