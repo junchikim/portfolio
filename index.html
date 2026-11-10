@@ -222,6 +222,14 @@
   .copy{margin-top:42px;font-family:var(--mono);font-size:11.5px;color:var(--on-dark-3)}
 
   @media (prefers-reduced-motion:reduce){ *{transition-duration:.01ms !important;animation:none !important;scroll-behavior:auto} }
+  .learn{font-size:13px;color:var(--text-2);line-height:1.6;margin:0 0 12px}
+  .learn .lb{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--text);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin-right:7px;vertical-align:1px}
+  .gapsec{padding:0 0 80px}
+  .gaptbl{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .gaptbl th{font-size:12px;font-weight:700;color:var(--text-3);text-align:left;padding:0 12px 8px;letter-spacing:.04em}
+  .gaptbl td{border-top:1px solid var(--line);padding:14px 12px;vertical-align:top;color:var(--text-2)}
+  .gaptbl td.st{font-weight:700;color:var(--text);width:38%}
+  @media (max-width:640px){.gaptbl,.gaptbl tbody,.gaptbl tr,.gaptbl td{display:block;width:auto}.gaptbl thead,.gaptbl tr.h{display:none}.gaptbl td.st{width:auto;border-top:1px solid var(--line);padding-bottom:4px}.gaptbl td+td{border-top:none;padding-top:0}}
 </style>
 </head>
 <body>
@@ -348,6 +356,7 @@
           <div class="kpi find"><span class="k-cap">진단 영역</span><span class="k-val">기초 3 + 핵심 7</span></div>
         </div>
         <p class="note">진단 결과와 수치는 고객사 계약상 공개하지 않습니다.</p>
+        <p class="learn"><span class="lb">배운 점</span>같은 기준의 점수가 있어야 "무엇부터 고칠지"를 감이 아니라 숫자로 합의할 수 있습니다.</p>
         <div class="join"><em>합류하면</em>가장 먼저 지금 팀의 숫자로 어디가 막혀 있는지 정리하고, 무엇부터 고칠지 순서를 정합니다.</div>
         <div class="tools"><span class="tool">Google 스프레드시트</span><span class="tool">Apps Script</span><span class="tool">Claude API</span><span class="tool">GA4</span></div>
       </article>
@@ -374,6 +383,7 @@
           <div class="kpi find"><span class="k-cap">따로 다시 계산한 값과 차이</span><span class="k-val">0원</span></div>
         </div>
         <p class="note">이 과정에서 진단의 첫 질문을 "성과가 좋은가"에서 "받은 데이터가 전체인가"로 바꾸고, 측정 점검을 지표 계산 앞에 뒀습니다.</p>
+        <p class="learn"><span class="lb">배운 점</span>분석이 빨라질수록, 숫자를 검수하는 장치가 먼저 있어야 합니다.</p>
         <div class="join"><em>합류하면</em>팀에 이미 있는 분석 방식과 AI 활용은 살리고, 숫자의 출처와 검수 기준을 고정해 실행으로 이어지게 만듭니다.</div>
         <div class="tools"><span class="tool">Python</span><span class="tool">광고 관리자 원본</span><span class="tool">쇼핑몰 주문</span><span class="tool">GA4</span></div>
       </article>
@@ -400,6 +410,7 @@
           <div class="kpi"><span class="k-cap">구독형 브랜드 · 구독 전환 고객 LTV</span><span class="k-val"><span class="to">8.9배</span></span></div>
         </div>
         <p class="note">두 번째 구매만 넘기면 다시 살 확률이 크게 오르는 구조라, 두 번째 구매를 아하모먼트로 정의했습니다. 분석 결과는 가설이며, 매출 효과는 캠페인 운영 후 확인합니다.</p>
+        <p class="learn"><span class="lb">배운 점</span>AI에는 정리와 초안만 맡기고, 숫자는 코드가, 확정은 사람이 해야 결과를 믿을 수 있습니다.</p>
         <div class="join"><em>합류하면</em>고객이 왜 다시 오는지 모르는 팀이라면, 다시 사게 만드는 첫 경험부터 데이터로 찾아 CRM 조건으로 바로 연결합니다.</div>
         <div class="tools"><span class="tool">주문 데이터</span><span class="tool">Apps Script</span><span class="tool">Claude API</span><span class="tool">리토스</span></div>
       </article>
@@ -427,6 +438,7 @@
           <div class="kpi"><span class="k-cap">구매전환율</span><span class="k-val"><span class="to">+27%</span> <span class="from">3.0→3.8%</span></span></div>
         </div>
         <p class="note">같은 기간 하루 광고비도 3.7배(12만→44만 원) 늘었습니다. 광고비가 3.7배 느는 동안 광고 밖 매출이 2.4배 함께 늘어난 것이 이 사례의 핵심입니다.</p>
+        <p class="learn"><span class="lb">배운 점</span>광고·가입·메시지를 따로 개선하면 각각의 숫자는 좋아져도 매출로 쌓이지 않습니다.</p>
         <div class="join"><em>합류하면</em>광고를 늘려야 하는 팀이라면, 광고로 들어온 고객이 다음엔 광고 없이 다시 사도록 검색·가입·메시지 흐름부터 같이 짭니다.</div>
         <div class="tools"><span class="tool">네이버 검색광고</span><span class="tool">Meta 광고</span><span class="tool">친구톡·문자</span><span class="tool">통합 대시보드</span></div>
       </article>
@@ -453,6 +465,7 @@
           <div class="kpi"><span class="k-cap">실제 매출 기준 ROAS</span><span class="k-val"><span class="to">+29%</span> <span class="from">289→374%</span></span></div>
         </div>
         <p class="note">광고비를 21% 줄이고도 매출은 그대로 지켰습니다. 계절 가전이라 8월에는 스마트스토어 전체 매출이 전달의 절반 이하로 줄었고 광고 ROAS도 225%로 내려갔습니다. 함께 제안한 CRM 시퀀스는 실행까지 가지 못했습니다.</p>
+        <p class="learn"><span class="lb">배운 점</span>광고 화면의 숫자와 실제 매출은 다를 수 있다는 걸 전제로 시작해야 합니다.</p>
         <div class="join"><em>합류하면</em>광고 화면 숫자로 예산을 나누는 팀이라면, 실제 매출 기준과 구매 수를 함께 보는 기준부터 다시 잡습니다.</div>
         <div class="tools"><span class="tool">네이버 GFA</span><span class="tool">ADVoost</span><span class="tool">스마트스토어 통계</span><span class="tool">A/B 테스트</span></div>
       </article>
@@ -478,6 +491,7 @@
           <div class="kpi"><span class="k-cap">AOS 누적 설치</span><span class="k-val"><span class="from">13만</span> → <span class="to">24만</span></span></div>
           <div class="kpi solo"><span class="k-cap">퇴사 시점 DAU</span><span class="k-val">입사 대비 +77%</span></div>
         </div>
+        <p class="learn"><span class="lb">배운 점</span>다시 오는 사람이 늘지 않으면 가입은 비용일 뿐입니다.</p>
         <div class="join"><em>합류하면</em>가입자는 느는데 활성 사용자가 안 느는 팀이라면, 다시 오는 사람들의 첫 행동부터 찾습니다.</div>
         <div class="tools"><span class="tool">AppsFlyer</span><span class="tool">Firebase</span><span class="tool">GA4</span><span class="tool">Google Data Studio</span></div>
       </article>
@@ -497,7 +511,8 @@
           <div class="kpi find"><span class="k-cap">연동 고객사</span><span class="k-val">3곳</span></div>
         </div>
         <p class="note">고객사별 성과는 도입 전후를 같은 지표로 쌓고 있습니다.</p>
-        <div class="join"><em>합류하면</em>CRM을 도입만 해두고 못 쓰는 팀이라면, 누구에게 언제 무엇을 보낼지부터 먼저 짜드립니다.</div>
+        <p class="learn"><span class="lb">배운 점</span>툴보다 "누구에게 언제 무엇을 보낼지"가 먼저 정해져야 실제로 쓰입니다.</p>
+        <div class="join"><em>합류하면</em>CRM을 도입만 해두고 못 쓰는 팀이라면, 누구에게 언제 무엇을 보낼지부터 먼저 정리합니다.</div>
         <div class="tools"><span class="tool">리토스</span><span class="tool">알림톡·브랜드메시지</span><span class="tool">카페24·아임웹 연동</span><span class="tool">SQL</span></div>
       </article>
 
@@ -568,6 +583,22 @@
       <li><div class="when">2019.02 ~ 2021.05</div><div class="who">모티브인텔리전스<span>IMC팀 매니저</span></div><div class="what">애드테크 환경에서 광고주 캠페인 운영, 타깃 A/B와 시간대 예산 조정으로 기존 제안 대비 CPC 22~58% 감소</div></li>
       <li><div class="when">2017.11 ~ 2018.11</div><div class="who">오렌지클락프로덕션<span>Producer team PD</span></div><div class="what">영상 광고 제작 프로젝트 총괄, 대행사·스태프·출연진 사이 일정과 결과물 조율</div></li>
     </ol>
+  </div>
+</section>
+
+<!-- GAP -->
+<section class="gapsec" id="gap">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">GAP</div>
+      <h2 class="sec-title">이력서에서 보이는 차이, 이렇게 메웁니다</h2>
+    </div>
+    <table class="gaptbl">
+      <tr class="h"><th>이력서에서 보이는 차이</th><th>메우는 방법</th></tr>
+      <tr><td class="st">소규모 조직에서 리딩과 실무를 같이 했다</td><td>사람이 늘수록 기준이 흔들리기 쉬워서, 진단 틀·GTM 표준 컨테이너·발송 조건 50종처럼 팀이 같이 쓰는 기준부터 깝니다.</td></tr>
+      <tr><td class="st">월 최대 5천만 원 예산, 성과 숫자의 절대 규모가 작다</td><td>예산이 커질수록 측정 기준이 틀렸을 때 손실도 커집니다. 실제 매출 기준과 데이터 누락 점검부터 고정하고(CASE 02·05), 작게 검증한 뒤 키웁니다.</td></tr>
+      <tr><td class="st">Braze·Amplitude를 직접 운영해 본 적이 없다</td><td>툴 안에서 정해야 하는 "누구에게 언제 무엇을"은 발송 조건 50종으로 설계하고 실데이터로 검증해 봤습니다. 툴 조작은 입사 초반에 익힙니다.</td></tr>
+    </table>
   </div>
 </section>
 
