@@ -250,6 +250,7 @@
   .zone + .zone{margin-top:0}
 
   .zone-try .demo{box-shadow:0 18px 40px -28px rgba(0,0,0,.35)}
+  .pdf-link{margin-top:14px;display:inline-block;font-size:13px;font-weight:600;color:var(--accent);border:1px solid var(--accent);padding:5px 10px;border-radius:2px}
   /* works grid */
   .grid{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 28px}
   @media(max-width:860px){.grid{grid-template-columns:1fr}}
@@ -326,6 +327,7 @@
   footer .mail:hover{color:#6F8BFF}
   footer .links{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:12.5px}
   footer .links a{border-bottom:1px solid var(--ink)} footer .links a:hover{color:var(--accent);border-color:var(--accent)}
+  footer .now-role{margin-top:10px;font-size:14px;color:#A9ADB5}
   footer .fine{margin-top:34px;font-size:12px;color:var(--ink-3)}
 </style>
 </head>
@@ -335,9 +337,8 @@
   <div class="wrap">
     <a href="#top" class="brand">김준치</a>
     <nav class="nav">
-      <a class="hide" href="#try">TRY</a><span class="sep hide">/</span>
-      <a class="hide" href="#works">WORKS</a><span class="sep hide">/</span>
-      <a class="hide" href="#career">CAREER</a>
+      <a class="hide" href="#try">DEMO</a><span class="sep hide">/</span>
+      <a class="hide" href="#works">TOOLS</a>
       <a class="cta" href="#contact">CONTACT</a>
     </nav>
   </div>
@@ -368,16 +369,17 @@
 
 <div class="zone zone-try" id="try">
   <div class="zcover zcover-try"><div class="wrap">
-    <div class="cv-top"><span>01 / 03</span><span>TRY</span></div>
-    <div class="cv-big">TRY<i>.</i></div>
-    <div class="cv-bot"><p class="cv-line">실무에서 쓰는 분석을<br>샘플 데이터로 직접 돌려 봅니다.</p><p class="cv-items">재구매·아하모먼트 분석 · 그로스 진단 · 알림톡 문구 심사 검사기</p></div>
+    <div class="cv-top"><span>01 / 02</span><span>포트폴리오 보조 자료</span></div>
+    <div class="cv-big">DEMO<i>.</i></div>
+    <div class="cv-bot"><p class="cv-line">포트폴리오 속 분석을<br>직접 돌려 봅니다.</p><p class="cv-items">재구매·아하모먼트 분석 · 그로스 진단 · 알림톡 문구 심사 검사기</p></div>
   </div></div>
 <div class="zone-body">
 <section class="sec" id="try-repurchase">
   <div class="wrap">
-    <div class="sh rv"><span class="lb">01 — TRY</span><span class="rt">바로 실행</span></div>
+    <div class="sh rv"><span class="lb">DEMO 1</span><span class="rt">바로 실행</span></div>
     <h2>재구매·아하모먼트 분석</h2>
     <p class="sub">실무에서는 구글 시트와 Apps Script로 돌리는 재구매 분석 워크플로우입니다. 같은 계산 기준을 그대로 써서, 이 페이지에서 샘플 데이터로 결과를 볼 수 있게 데모를 만들었습니다. 같은 날 같은 고객의 주문은 한 번의 구매로 묶고, 관측 기간이 덜 지난 고객은 계산에서 빼는 등 실제 운영에서 부딪힌 기준이 들어가 있습니다.</p>
+    <p class="pdf-link">포트폴리오 연결 · '재구매 분석 워크플로우·그로스 진단 템플릿' 사례의 재구매 지표</p>
     <div class="demo rv">
       <div class="demo-bar">
         <div class="t">오늘의원두 <span style="font-weight:400;color:var(--ink-3)">(가상 커피 쇼핑몰)</span><small id="rp-src">샘플 주문 데이터 · 고객 800명 · 약 1년</small></div>
@@ -396,9 +398,10 @@
 
 <section class="sec" id="try-diagnosis">
   <div class="wrap">
-    <div class="sh rv"><span class="lb">02 — TRY</span><span class="rt">바로 실행</span></div>
+    <div class="sh rv"><span class="lb">DEMO 2</span><span class="rt">바로 실행</span></div>
     <h2>그로스 진단</h2>
     <p class="sub">실무에서는 Python과 Claude API로 돌리는 그로스 진단 템플릿입니다. 광고·주문·GA4 데이터로 퍼널 단계마다 지금 상태를 판정하고, 데이터를 근거로 다음에 풀어야 할 과제를 단계별로 정리합니다. 같은 판정 규칙으로 샘플 브랜드 세 곳을 진단해 볼 수 있게 데모를 만들었습니다. 브랜드마다 진단 결과가 어떻게 달라지는지 비교해 보세요.</p>
+    <p class="pdf-link">포트폴리오 연결 · '재구매 분석 워크플로우·그로스 진단 템플릿' 사례의 진단 판정 규칙</p>
     <div class="demo rv">
       <div class="demo-bar">
         <div class="t">샘플 브랜드 선택<small id="gd-src">최근 90일 광고·주문·GA4 합성 데이터</small></div>
@@ -415,9 +418,10 @@
 
 <section class="sec" id="try-alimtalk">
   <div class="wrap">
-    <div class="sh rv"><span class="lb">03 — TRY</span><span class="rt">바로 실행</span></div>
+    <div class="sh rv"><span class="lb">DEMO 3</span><span class="rt">바로 실행</span></div>
     <h2>알림톡 문구 심사 검사기</h2>
     <p class="sub">알림톡은 카카오 심사를 통과해야 보낼 수 있고, 반려되면 다시 받기까지 영업일 2일이 걸립니다. 실제 반려 사유와 공식 제작 가이드를 CRM 문구 워크플로우의 '채널 가이드' 시트에 규칙으로 정리해, 문구를 만들 때 등록 전에 걸러 냅니다. 가이드가 바뀌면 코드는 그대로 두고 시트만 고쳐 다음 생성부터 반영합니다. 그 규칙 일부를 옮겼습니다.</p>
+    <p class="pdf-link">포트폴리오 연결 · CRM 사례에서 쓴 문구 검수 규칙 (CRM 캠페인 워크플로우)</p>
     <div class="demo rv">
       <div class="demo-bar">
         <div class="t">알림톡 · 이미지형<small>문구를 고치면 바로 다시 검사합니다</small></div>
@@ -453,16 +457,21 @@
 
 <div class="zone zone-works">
   <div class="zcover zcover-works"><div class="wrap">
-    <div class="cv-top"><span>02 / 03</span><span>WORKS</span></div>
-    <div class="cv-big">WORKS<i>.</i></div>
-    <div class="cv-bot"><p class="cv-line">업무에 쓰고 있는<br>도구들입니다.</p><p class="cv-items">그로스 진단 템플릿 · CRM 캠페인 워크플로우 · 발송 조건 설계 · 광고 소재 제작 · 내 연봉 키우기 · 콘텐츠 자동 발행</p></div>
+    <div class="cv-top"><span>02 / 02</span><span>포트폴리오 보조 자료</span></div>
+    <div class="cv-big">TOOLS<i>.</i></div>
+    <div class="cv-bot"><p class="cv-line">포트폴리오에<br>다 담지 못한 도구들.</p><p class="cv-items">그로스 진단 템플릿 · CRM 캠페인 워크플로우 · 발송 조건 설계 · 광고 소재 제작 · 내 연봉 키우기 · 콘텐츠 자동 발행</p></div>
   </div></div>
 <div class="zone-body">
 <section class="sec" id="works">
   <div class="wrap">
-    <div class="sh rv"><span class="lb">04 — WORKS</span><span class="rt">화면으로 보기 · 6</span></div>
+    <div class="sh rv"><span class="lb">TOOLS</span><span class="rt">화면으로 보기 · 6</span></div>
     <h2>업무에 쓰고 있는 도구들</h2>
     <p class="sub">설계와 기준은 직접 정하고, 구현은 Claude Code·Apps Script·Claude API로 했습니다. 회사 업무로 만든 도구는 고객사 데이터 없이 가상 브랜드로 다시 구성했습니다.</p>
+    <div class="prin rv" style="margin-top:28px">
+      <div><span class="n">01</span><b>무엇을 잴지부터</b><p>만들기 전에 결과 지표와 과정 지표, 몇이 나오면 성공인지부터 정합니다.</p></div>
+      <div><span class="n">02</span><b>계산은 코드, 정리는 AI</b><p>숫자는 누가 언제 돌려도 같게 나오도록 코드로 고정하고, 해석과 문장만 AI에 맡깁니다.</p></div>
+      <div><span class="n">03</span><b>팀이 같이 쓰게</b><p>운영 기준과 가이드 문서를 함께 만들어, 사람이 바뀌어도 같은 기준으로 돌아가게 합니다.</p></div>
+    </div>
 
     <div class="grid">
 
@@ -579,47 +588,11 @@
 </div>
 </div>
 
-<div class="zone zone-about">
-  <div class="zcover zcover-about"><div class="wrap">
-    <div class="cv-top"><span>03 / 03</span><span>ABOUT</span></div>
-    <div class="cv-big">ABOUT<i>.</i></div>
-    <div class="cv-bot"><p class="cv-line">어떤 기준으로 만들고,<br>어디서 일해 왔는지.</p><p class="cv-items">도구를 만드는 기준 · 경력</p></div>
-  </div></div>
-<div class="zone-body">
-<section class="sec" id="how">
-  <div class="wrap">
-    <div class="sh rv"><span class="lb">05 — HOW I BUILD</span><span class="rt"></span></div>
-    <h2>도구를 만들 때 지키는 순서</h2>
-    <div class="prin rv">
-      <div><span class="n">01</span><b>무엇을 잴지부터</b><p>만들기 전에 결과 지표와 과정 지표, 몇이 나오면 성공인지부터 정합니다.</p></div>
-      <div><span class="n">02</span><b>계산은 코드, 정리는 AI</b><p>숫자는 누가 언제 돌려도 같게 나오도록 코드로 고정하고, 해석과 문장만 AI에 맡깁니다.</p></div>
-      <div><span class="n">03</span><b>팀이 같이 쓰게</b><p>운영 기준과 가이드 문서를 함께 만들어, 사람이 바뀌어도 같은 기준으로 돌아가게 합니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="career">
-  <div class="wrap">
-    <div class="sh rv"><span class="lb">06 — CAREER</span><span class="rt">2017 – NOW</span></div>
-    <h2>경력</h2>
-    <div class="career rv">
-      <div class="cr"><div class="w">2024.06 – 현재</div><div class="o">리인벤팅<span>마케팅팀 팀장</span></div><div class="d">마케팅 CRM 솔루션 Retous 기획·운영, 브랜드 그로스 전략 설계·실행. 실무자 최대 3명과 브랜드 최대 3곳 동시 운영</div></div>
-      <div class="cr"><div class="w">2023.04 – 2024.05</div><div class="o">퍼스널에이아이 (구 에스앤피랩)<span>마케팅·운영 과장(파트장)</span></div><div class="d">마이데이터 거래 앱 그로스 리딩. 회사 처음으로 AppsFlyer·Firebase 도입, 집중 개선 6개월 재방문율 +116%</div></div>
-      <div class="cr"><div class="w">2022.01 – 2023.04</div><div class="o">iHQ<span>모바일마케팅팀 대리</span></div><div class="d">OTT 서비스 런칭 마케팅. 런칭 4개월 만에 사용자 10만 명, 광고 대행사 선정 PT 주관, 실무자 최대 7명 리딩</div></div>
-      <div class="cr"><div class="w">2021.06 – 2021.11</div><div class="o">알브이핀<span>브랜드마케팅팀 파트장</span></div><div class="d">자사 소비재 브랜드 디지털 광고 운영, 마케팅 파트 역할 재정비</div></div>
-      <div class="cr"><div class="w">2019.02 – 2021.05</div><div class="o">모티브인텔리전스<span>IMC팀 매니저</span></div><div class="d">광고주 타깃 광고 캠페인 운영, 타깃별 A/B 테스트와 시간대 예산 조정으로 클릭당 비용 22~58% 감소</div></div>
-      <div class="cr"><div class="w">2017.11 – 2018.11</div><div class="o">오렌지클락프로덕션<span>제작PD팀 PD</span></div><div class="d">영상 광고 제작 프로젝트 총괄</div></div>
-    </div>
-    <p class="awards"><b>CERT · AWARDS</b>데이터분석 준전문가(ADsP) 2024.11 · 2023 한국어 AI 경진대회 장려상 · 2016 지역기업-청년 희망이음프로젝트 동상 · 제2회 글로벌 이노베이터 페스타 동상 · 제6회 롯데 아이디어공모전 본선진출</p>
-  </div>
-</section>
-
-</div>
-</div>
 
 <footer id="contact">
   <div class="wrap">
     <div class="lb">CONTACT</div>
+    <p class="now-role">리인벤팅 마케팅팀 팀장 · 마케팅 CRM 솔루션 Retous 기획·운영 · 경력 전체는 PDF 포트폴리오에 있습니다</p>
     <a class="mail" href="mailto:junchikim321@gmail.com">junchikim321@gmail.com</a>
     <div class="links">
       <a href="https://www.linkedin.com/in/junchi-kim" target="_blank" rel="noopener">LinkedIn ↗</a>
