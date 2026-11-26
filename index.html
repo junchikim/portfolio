@@ -43,8 +43,28 @@
   .nav .cta:hover{background:var(--accent);color:#fff}
   @media(max-width:720px){.nav .hide{display:none}}
 
-  /* hero */
-  .hero{padding:96px 0 72px}
+  /* hero (dark) */
+  .hero{padding:110px 0 0;background:#0B0F14;color:#F2F2EF;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 85% 0%,rgba(31,75,255,.22),transparent 60%);pointer-events:none}
+  .hero .wrap{position:relative}
+  .hero .query{color:#8A8F98} .hero .query::before{background:#F2F2EF} .hero .query b{color:#fff} .hero .query s{color:#6F8BFF}
+  .hero h1{color:#fff} .hero h1 .acc{color:#6F8BFF}
+  .hero .lead{color:#A9ADB5}
+  .hero .hero-try{border-top:1px solid rgba(255,255,255,.35)}
+  .hero .try-link{border-bottom:1px solid rgba(255,255,255,.12)}
+  .hero .try-link + .try-link{border-left:1px solid rgba(255,255,255,.12)}
+  .hero .try-link .n{color:#6F8BFF} .hero .try-link p{color:#A9ADB5}
+  .hero .try-link:hover h3,.hero .try-link:hover .arr{color:#6F8BFF}
+  .hero .hero-meta{color:#A9ADB5} .hero .hero-meta span b{color:#6B7079}
+  .hstats{margin-top:64px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.12)}
+  @media(max-width:760px){.hstats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .hstat{padding:26px 22px 30px 0}
+  .hstat + .hstat{padding-left:22px;border-left:1px solid rgba(255,255,255,.12)}
+  @media(max-width:760px){.hstat:nth-child(3){padding-left:0;border-left:0}.hstat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}}
+  .hstat .v{font-size:clamp(30px,3.6vw,44px);font-weight:300;letter-spacing:-.03em;color:#fff;line-height:1.1}
+  .hstat .c{margin-top:8px;font-size:12.5px;color:#8A8F98}
+  .topbar.dark{background:rgba(11,15,20,.88);border-bottom-color:rgba(255,255,255,.08)} .topbar.dark .brand,.topbar.dark .nav a{color:#F2F2EF} .topbar.dark .nav .sep{color:#555} .topbar.dark .nav .cta{background:#fff;color:#111!important}
+
   .query{font-family:var(--mono);font-size:clamp(13px,1.6vw,16px);color:var(--ink-2);line-height:1.7}
   .query::before{content:"";display:block;width:28px;height:2px;background:var(--ink);margin-bottom:18px}
   .query b{color:var(--ink);font-weight:700} .query s{color:var(--accent);text-decoration:none}
@@ -208,16 +228,19 @@
   .cr{display:grid;grid-template-columns:170px 260px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:14px}
   .cr:first-child{border-top:1px solid var(--line)}
   @media(max-width:820px){.cr{grid-template-columns:1fr;gap:2px}}
-  .cr .w{font-family:var(--mono);font-size:12.5px;color:var(--ink-3)}
+  .cr .w{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);position:relative;padding-left:18px}
+  .cr .w::before{content:"";position:absolute;left:0;top:5px;width:8px;height:8px;background:var(--ink-3)}
+  .cr:first-child .w::before{background:var(--accent)}
   .cr .o{font-weight:700} .cr .o span{display:block;font-weight:400;color:var(--ink-2);font-size:13px}
   .cr .d{color:var(--ink-2);font-size:13.5px}
   .awards{margin-top:18px;font-size:13px;color:var(--ink-2)}
   .awards b{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-3);margin-right:8px}
 
-  footer{border-top:1px solid var(--rule);padding:40px 0 70px}
+  footer{background:#0B0F14;color:#F2F2EF;padding:56px 0 76px}
+  footer .links a{border-color:#F2F2EF!important} footer .fine{color:#6B7079!important}
   footer .lb{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em}
   footer .mail{display:inline-block;margin-top:18px;font-size:clamp(26px,5vw,56px);font-weight:800;letter-spacing:-.04em;line-height:1.1}
-  footer .mail:hover{color:var(--accent)}
+  footer .mail:hover{color:#6F8BFF}
   footer .links{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:12.5px}
   footer .links a{border-bottom:1px solid var(--ink)} footer .links a:hover{color:var(--accent);border-color:var(--accent)}
   footer .fine{margin-top:34px;font-size:12px;color:var(--ink-3)}
@@ -249,6 +272,12 @@
     <div class="hero-meta">
       <span><b>NOW</b>리인벤팅 마케팅팀 팀장 · 마케팅 CRM 솔루션 Retous 기획·운영</span>
       <span><b>BEFORE</b>마이데이터 앱 그로스 리딩 · OTT 런칭 마케팅</span>
+    </div>
+    <div class="hstats">
+      <div class="hstat"><div class="v">8년차</div><div class="c">광고 · 앱 그로스 · CRM</div></div>
+      <div class="hstat"><div class="v">50종</div><div class="c">직접 설계한 CRM 발송 대상 조건</div></div>
+      <div class="hstat"><div class="v">+116%</div><div class="c">마이데이터 앱 재방문율 (6개월)</div></div>
+      <div class="hstat"><div class="v">41일</div><div class="c">게임 기획부터 출시까지 (1인)</div></div>
     </div>
   </div>
 </section>
@@ -470,7 +499,7 @@
 
 <script>
 /* topbar */
-(function(){const tb=document.getElementById('topbar');const f=()=>{};addEventListener('scroll',f,{passive:true});f();})();
+(function(){const tb=document.getElementById('topbar');const h=document.querySelector('.hero');const f=()=>tb.classList.toggle('dark',scrollY<h.offsetHeight-58);addEventListener('scroll',f,{passive:true});f();})();
 
 /* ---------- 재구매·아하모먼트 분석 ---------- */
 (function(){
