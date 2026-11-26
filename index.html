@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
-<title>김준치 · Growth Lead — 직접 써 보는 작업물</title>
+<title>김준치 · Growth Lead — 숫자를 만든 도구</title>
 <meta name="description" content="8년차 그로스·CRM 마케터 김준치가 만든 분석·운영 도구를 직접 써 볼 수 있게 모았습니다." />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,6 +53,7 @@
   .hero .hero-try{border-top:1px solid rgba(255,255,255,.35)}
   .hero .try-link{border-bottom:1px solid rgba(255,255,255,.12)}
   .hero .try-link + .try-link{border-left:1px solid rgba(255,255,255,.12)}
+  @media(max-width:720px){.hero .try-link + .try-link{border-left:0;padding-left:0}}
   .hero .try-link .n{color:#6F8BFF} .hero .try-link p{color:#A9ADB5}
   .hero .try-link:hover h3,.hero .try-link:hover .arr{color:#6F8BFF}
   .hero .hero-meta{color:#A9ADB5} .hero .hero-meta span b{color:#6B7079}
@@ -316,8 +317,8 @@
   <canvas id="orb" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="query">SELECT * FROM <b>works</b><br>WHERE you_can_try = <s>true</s>;</div>
-    <h1><span class="ln"><span>설명보다,</span></span><span class="ln"><span class="acc">직접 써 보실 수 있게.</span></span></h1>
-    <p class="lead">8년 동안 광고부터 CRM까지 그로스를 맡으며, 반복되는 분석과 운영은 도구로 만들어 팀이 같이 쓰게 했습니다. 실무에서 쓰는 분석 방식을 샘플 데이터로 직접 돌려 볼 수 있게 데모로 옮겼습니다.</p>
+    <h1><span class="ln"><span>숫자는 포트폴리오에서,</span></span><span class="ln"><span class="acc">그 숫자를 만든 도구는 여기서.</span></span></h1>
+    <p class="lead">포트폴리오에 적은 결과가 어떤 기준과 도구로 나왔는지, 샘플 데이터로 직접 돌려 볼 수 있게 옮겼습니다. 실무에서는 구글 시트·Apps Script·Python으로 돌리는 분석을 같은 계산 기준으로 다시 만든 데모입니다.</p>
     <div class="hero-try">
       <a class="try-link" href="#try-repurchase"><div><div class="n">TRY 01</div><h3>재구매·아하모먼트 분석</h3><p>주문 데이터로 재구매 주기, 첫 구매 상품별 LTV, 다시 사게 만드는 행동과 발송 조건 초안까지</p></div><span class="arr">→</span></a>
       <a class="try-link" href="#try-diagnosis"><div><div class="n">TRY 02</div><h3>그로스 진단</h3><p>샘플 브랜드 세 곳의 데이터로 퍼널별 현황을 판정하고, 다음에 풀 과제를 단계별로 정리합니다</p></div><span class="arr">→</span></a>
