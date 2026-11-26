@@ -56,6 +56,20 @@
   .hero .try-link .n{color:#6F8BFF} .hero .try-link p{color:#A9ADB5}
   .hero .try-link:hover h3,.hero .try-link:hover .arr{color:#6F8BFF}
   .hero .hero-meta{color:#A9ADB5} .hero .hero-meta span b{color:#6B7079}
+  #orb{position:absolute;right:-40px;top:40px;width:min(620px,52vw);height:min(620px,52vw);pointer-events:none;opacity:0;transition:opacity 1.2s ease .2s}
+  #orb.on{opacity:1}
+  @media(max-width:760px){#orb{right:-140px;top:10px;width:420px;height:420px}#orb.on{opacity:.4}}
+  .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+  .hero h1 .ln > span{display:inline-block;transform:translateY(105%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+  .hero h1 .ln:nth-child(2) > span{transition-delay:.12s}
+  .ready .hero h1 .ln > span{transform:none}
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .item .vis > *{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+  .item:hover .vis > *:not(.stats){transform:scale(1.03)}
+  .item .vis::after{content:"";position:absolute;inset:0;background:radial-gradient(400px 220px at var(--mx,50%) var(--my,50%),rgba(31,75,255,.10),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+  .item:hover .vis::after{opacity:1}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.hero h1 .ln > span{transform:none}#orb{display:none}}
   .hstats{margin-top:64px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.12)}
   @media(max-width:760px){.hstats{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .hstat{padding:26px 22px 30px 0}
@@ -261,9 +275,10 @@
 </header>
 
 <section class="hero" id="top">
+  <canvas id="orb" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="query">SELECT * FROM <b>works</b><br>WHERE you_can_try = <s>true</s>;</div>
-    <h1>설명보다,<br><span class="acc">직접 써 보실 수 있게.</span></h1>
+    <h1><span class="ln"><span>설명보다,</span></span><span class="ln"><span class="acc">직접 써 보실 수 있게.</span></span></h1>
     <p class="lead">8년 동안 광고부터 CRM까지 그로스를 맡으며, 반복되는 분석과 운영은 도구로 만들어 팀이 같이 쓰게 했습니다. 아래 두 개는 이 페이지에서 바로 실행됩니다.</p>
     <div class="hero-try">
       <a class="try-link" href="#try-repurchase"><div><div class="n">TRY 01</div><h3>재구매·아하모먼트 분석</h3><p>주문 데이터로 재구매 주기, 첫 구매 상품별 LTV, 다시 사게 만드는 행동과 발송 조건 초안까지</p></div><span class="arr">→</span></a>
@@ -274,10 +289,10 @@
       <span><b>BEFORE</b>마이데이터 앱 그로스 리딩 · OTT 런칭 마케팅</span>
     </div>
     <div class="hstats">
-      <div class="hstat"><div class="v">8년차</div><div class="c">광고 · 앱 그로스 · CRM</div></div>
-      <div class="hstat"><div class="v">50종</div><div class="c">직접 설계한 CRM 발송 대상 조건</div></div>
-      <div class="hstat"><div class="v">+116%</div><div class="c">마이데이터 앱 재방문율 (6개월)</div></div>
-      <div class="hstat"><div class="v">41일</div><div class="c">게임 기획부터 출시까지 (1인)</div></div>
+      <div class="hstat"><div class="v" data-n="8" data-pre="" data-suf="년차">8년차</div><div class="c">광고 · 앱 그로스 · CRM</div></div>
+      <div class="hstat"><div class="v" data-n="50" data-pre="" data-suf="종">50종</div><div class="c">직접 설계한 CRM 발송 대상 조건</div></div>
+      <div class="hstat"><div class="v" data-n="116" data-pre="+" data-suf="%">+116%</div><div class="c">마이데이터 앱 재방문율 (6개월)</div></div>
+      <div class="hstat"><div class="v" data-n="41" data-pre="" data-suf="일">41일</div><div class="c">게임 기획부터 출시까지 (1인)</div></div>
     </div>
   </div>
 </section>
@@ -285,10 +300,10 @@
 <div id="try"></div>
 <section class="sec" id="try-repurchase">
   <div class="wrap">
-    <div class="sh"><span class="lb">01 — TRY</span><span class="rt">바로 실행</span></div>
+    <div class="sh rv"><span class="lb">01 — TRY</span><span class="rt">바로 실행</span></div>
     <h2>재구매·아하모먼트 분석</h2>
     <p class="sub">고객사마다 "누가 다시 사는지"를 손으로 계산하던 일을 워크플로우로 만든 것을, 브라우저에서 돌아가게 옮겼습니다. 같은 날 같은 고객의 주문은 한 번의 구매로 묶고, 관측 기간이 덜 지난 고객은 계산에서 빼는 등 실제 운영에서 부딪힌 기준을 그대로 넣었습니다.</p>
-    <div class="demo">
+    <div class="demo rv">
       <div class="demo-bar">
         <div class="t">오늘의원두 <span style="font-weight:400;color:var(--ink-3)">(가상 커피 쇼핑몰)</span><small id="rp-src">샘플 주문 데이터 · 고객 800명 · 약 1년</small></div>
         <div class="btns">
@@ -309,10 +324,10 @@
 
 <section class="sec" id="try-alimtalk">
   <div class="wrap">
-    <div class="sh"><span class="lb">02 — TRY</span><span class="rt">바로 실행</span></div>
+    <div class="sh rv"><span class="lb">02 — TRY</span><span class="rt">바로 실행</span></div>
     <h2>알림톡 문구 심사 검사기</h2>
     <p class="sub">알림톡은 카카오 심사를 통과해야 보낼 수 있고, 반려되면 다시 받기까지 영업일 2일이 걸립니다. 실제 반려 사유와 공식 제작 가이드를 규칙으로 정리해 CRM 문구 워크플로우에 넣었고, 그중 일부를 옮겼습니다.</p>
-    <div class="demo">
+    <div class="demo rv">
       <div class="demo-bar">
         <div class="t">알림톡 · 이미지형<small>문구를 고치면 바로 다시 검사합니다</small></div>
         <div class="btns">
@@ -344,13 +359,13 @@
 
 <section class="sec" id="works">
   <div class="wrap">
-    <div class="sh"><span class="lb">03 — WORKS</span><span class="rt">화면으로 보기 · 6</span></div>
+    <div class="sh rv"><span class="lb">03 — WORKS</span><span class="rt">화면으로 보기 · 6</span></div>
     <h2>업무에 쓰고 있는 도구들</h2>
     <p class="sub">설계와 기준은 직접 정하고, 구현은 Claude Code·Apps Script·Claude API로 했습니다. 회사 업무로 만든 도구는 고객사 데이터 없이 가상 브랜드로 다시 구성했습니다.</p>
 
     <div class="grid">
 
-      <article class="item">
+      <article class="item rv">
         <div class="vis cover"><img src="gd_report_first.jpg" alt="진단 템플릿이 만든 고객사용 첫 장" loading="lazy"></div>
         <div class="meta"><span>01 · 그로스 진단 템플릿</span><span>Python · Claude API</span></div>
         <h3>광고·매출·GA4 원본을 넣으면, 고객사가 바로 쓸 진단 문서가 나옵니다</h3>
@@ -362,7 +377,7 @@
         </ul></details>
       </article>
 
-      <article class="item">
+      <article class="item rv">
         <div class="vis"><div class="mini">
           <div class="row"><span class="n">01</span><div><b>브리프</b><p>오늘의원두 · 신선한 로스팅, 첫 구매 고객 비중이 높음</p></div></div>
           <div class="row"><span class="n">02</span><div><b>발송 조건</b><p>장바구니에 담고 3일 동안 사지 않은 고객</p></div></div>
@@ -381,12 +396,16 @@
         </ul></details>
       </article>
 
-      <article class="item">
-        <div class="vis"><div class="mini">
-          <div class="row"><span class="n">01</span><div><b>구매 여정 7단계로 고객 나누기</b><p>단계마다 담당자가 고를 수 있는 조건을 정의</p></div></div>
-          <div class="row"><span class="n">02</span><div><b>기획 문서 · 개발팀 검증표 · 검토 의견 대조</b><p>세 문서를 하나하나 맞춰 최종본 한 장으로 확정</p></div></div>
-          <div class="row"><span class="n">03</span><div><b>실제 데이터로 대상자 뽑아 보기</b><p><span class="no">4건</span> 결과가 어긋난 조건 수정</p></div></div>
-          <div class="row"><span class="n">04</span><div><b>데이터 문제 찾기</b><p>쿠폰 사용 여부가 갱신되지 않는 문제를 찾아 해결 방식 제안</p></div></div>
+      <article class="item rv">
+        <div class="vis"><div class="funnel">
+          <div class="fs"><div class="k">단계 1</div><div class="c">가입 후 N일 동안 미구매</div><div class="c">가입 후 첫 방문 없음</div></div>
+          <div class="fs"><div class="k">단계 2</div><div class="c">찜한 상품 미구매</div></div>
+          <div class="fs"><div class="k">단계 3</div><div class="c">장바구니 담고 N일 미구매</div><div class="c">발급 쿠폰 N일째 미사용</div></div>
+          <div class="fs"><div class="k">단계 4</div><div class="c">첫 구매 완료</div><div class="c">배송 후 리뷰 미작성</div></div>
+          <div class="fs"><div class="k">단계 5</div><div class="c">최근 N일 내 N회 이상</div></div>
+          <div class="fs"><div class="k">단계 6</div><div class="c">마지막 방문 후 N일</div></div>
+          <div class="fs"><div class="k">단계 7</div><div class="c">구매 많던 고객 장기 미방문</div></div>
+          <div class="fs" style="background:var(--ink);border-color:var(--ink);color:#fff"><div class="k" style="font-size:22px;font-weight:300">50종</div><div class="c" style="color:#bbb;border-color:#333">N일·N회는 고객사가 바꾸는 값</div></div>
         </div></div>
         <div class="meta"><span>03 · 발송 조건 설계</span><span>조건 설계 · 데이터 검증</span></div>
         <h3>SQL 없이 고르기만 하면 되는 발송 대상 조건 50종</h3>
@@ -398,7 +417,7 @@
         </ul></details>
       </article>
 
-      <article class="item">
+      <article class="item rv">
         <div class="vis"><div class="ladder">
           <div class="rung"><span class="l">속성</span><span>주문 후 로스팅, 로스팅 날짜 표기</span></div>
           <div class="rung"><span class="l">결과</span><span>집에서 내려도 향이 살아 있다</span></div>
@@ -411,7 +430,7 @@
         <p class="p">수단-목적 사슬(MEC)로 속성에서 결과와 가치까지 이어 본 뒤, 그 가치에 맞춰 소재 문구와 이미지 지시문 3안을 만들어 디자이너 시트로 넘깁니다. 수정 방향은 선택형 피드백으로 남겨 다음 소재에 씁니다.</p>
       </article>
 
-      <article class="item">
+      <article class="item rv">
         <div class="vis cover"><img src="game_store.jpg" alt="내 연봉 키우기 Google Play 스토어 등록 이미지" loading="lazy">
           <div class="stats"><div class="stat"><div class="v">41일</div><div class="c">기획부터 출시까지</div></div><div class="stat"><div class="v">7회</div><div class="c">테스트 중 업데이트</div></div><div class="stat"><div class="v">0건</div><div class="c">비정상 종료·ANR</div></div></div>
         </div>
@@ -426,7 +445,7 @@
         <a class="link" href="https://play.google.com/store/apps/details?id=com.kimjunchi.mysalaryidle" target="_blank" rel="noopener">Google Play에서 설치해 보기 ↗</a>
       </article>
 
-      <article class="item">
+      <article class="item rv">
         <div class="vis"><div class="mini">
           <div class="row"><span class="n">01</span><div><b>키워드 선정</b><p>검색광고 API로 검색량 있는 키워드만 주제 후보로</p></div></div>
           <div class="row"><span class="n">02</span><div><b>원고 · 이미지 생성</b><p>정해진 골격과 이미지 조건으로 생성</p></div></div>
@@ -456,9 +475,9 @@
 
 <section class="sec" id="how">
   <div class="wrap">
-    <div class="sh"><span class="lb">04 — HOW I BUILD</span><span class="rt"></span></div>
+    <div class="sh rv"><span class="lb">04 — HOW I BUILD</span><span class="rt"></span></div>
     <h2>도구를 만들 때 지키는 순서</h2>
-    <div class="prin">
+    <div class="prin rv">
       <div><span class="n">01</span><b>무엇을 잴지부터</b><p>만들기 전에 결과 지표와 과정 지표, 몇이 나오면 성공인지부터 정합니다.</p></div>
       <div><span class="n">02</span><b>계산은 코드, 정리는 AI</b><p>숫자는 누가 언제 돌려도 같게 나오도록 코드로 고정하고, 해석과 문장만 AI에 맡깁니다.</p></div>
       <div><span class="n">03</span><b>팀이 같이 쓰게</b><p>운영 기준과 가이드 문서를 함께 만들어, 사람이 바뀌어도 같은 기준으로 돌아가게 합니다.</p></div>
@@ -468,9 +487,9 @@
 
 <section class="sec" id="career">
   <div class="wrap">
-    <div class="sh"><span class="lb">05 — CAREER</span><span class="rt">2017 – NOW</span></div>
+    <div class="sh rv"><span class="lb">05 — CAREER</span><span class="rt">2017 – NOW</span></div>
     <h2>경력</h2>
-    <div class="career">
+    <div class="career rv">
       <div class="cr"><div class="w">2024.06 – 현재</div><div class="o">리인벤팅<span>마케팅팀 팀장</span></div><div class="d">마케팅 CRM 솔루션 Retous 기획·운영, 브랜드 그로스 전략 설계·실행. 실무자 최대 3명과 브랜드 최대 3곳 동시 운영</div></div>
       <div class="cr"><div class="w">2023.04 – 2024.05</div><div class="o">퍼스널에이아이 (구 에스앤피랩)<span>마케팅·운영 과장(파트장)</span></div><div class="d">마이데이터 거래 앱 그로스 리딩. 회사 처음으로 AppsFlyer·Firebase 도입, 집중 개선 6개월 재방문율 +116%</div></div>
       <div class="cr"><div class="w">2022.01 – 2023.04</div><div class="o">iHQ<span>모바일마케팅팀 대리</span></div><div class="d">OTT 서비스 런칭 마케팅. 런칭 4개월 만에 사용자 10만 명, 광고 대행사 선정 PT 주관, 실무자 최대 7명 리딩</div></div>
@@ -711,6 +730,41 @@
   ['ak-title','ak-body','ak-btn'].forEach(id=>$(id).addEventListener('input',()=>{VAR.lastIndex=0;check();}));
   $('ak-bad').onclick=()=>set('bad'); $('ak-good').onclick=()=>set('good');
   set('bad');
+})();
+
+/* ---------- 효과 ---------- */
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(()=>document.body.classList.add('ready'));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>reduce?el.classList.add('in'):io.observe(el));
+  const nums=document.querySelectorAll('.hstat .v[data-n]');
+  const run=el=>{const n=+el.dataset.n,pre=el.dataset.pre||'',suf=el.dataset.suf||'';const t0=performance.now(),D=1400;
+    const step=t=>{const p=Math.min(1,(t-t0)/D),e=1-Math.pow(1-p,3);el.textContent=pre+Math.round(n*e)+suf;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);};
+  if(!reduce){const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){run(e.target);io2.unobserve(e.target);}}),{threshold:.6});nums.forEach(n=>io2.observe(n));}
+  document.querySelectorAll('.item .vis').forEach(v=>v.addEventListener('mousemove',e=>{const r=v.getBoundingClientRect();v.style.setProperty('--mx',(e.clientX-r.left)+'px');v.style.setProperty('--my',(e.clientY-r.top)+'px');}));
+  // 3D 점 토러스: 다시 돌아오는 고객의 고리
+  const c=document.getElementById('orb'); if(!c||reduce)return;
+  const ctx=c.getContext('2d'); let W,H; const DPR=Math.min(2,devicePixelRatio||1);
+  const size=()=>{const r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*DPR;c.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);};
+  size(); addEventListener('resize',size);
+  const P=[],R=1,r=.42;
+  for(let i=0;i<96;i++)for(let j=0;j<26;j++){const u=i/96*Math.PI*2,v=j/26*Math.PI*2;P.push([(R+r*Math.cos(v))*Math.cos(u),(R+r*Math.cos(v))*Math.sin(u),r*Math.sin(v),u]);}
+  let mx=0,my=0,tx=0,ty=0; addEventListener('mousemove',e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5;},{passive:true});
+  let vis=true; new IntersectionObserver(es=>{vis=es[0].isIntersecting;}).observe(c);
+  c.classList.add('on');
+  const draw=t=>{requestAnimationFrame(draw);if(!vis)return;
+    mx+=(tx-mx)*.04;my+=(ty-my)*.04;
+    const a=t*.00018+mx*.8,b=1.05+my*.5+Math.sin(t*.0003)*.08;
+    const ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(b),sb=Math.sin(b);
+    ctx.clearRect(0,0,W,H);const sc=Math.min(W,H)*.30,cx=W/2,cy=H/2;
+    const pts=P.map(([x,y,z,u])=>{const x1=x*ca-y*sa,y1=x*sa+y*ca,y2=y1*cb-z*sb,z2=y1*sb+z*cb,f=3.2/(3.2+z2);
+      return[cx+x1*sc*f,cy+y2*sc*f,z2,f,.5+.5*Math.sin(u*3-t*.0016)];});
+    pts.sort((p,q)=>q[2]-p[2]);
+    for(const[x,y,z,f,w]of pts){const d=(1-z)/2,al=.12+.6*d*(.35+.65*w);
+      ctx.fillStyle=w>.82?`rgba(170,190,255,${al})`:`rgba(111,139,255,${al*.8})`;
+      const rad=(.6+1.6*d)*f;ctx.fillRect(x-rad/2,y-rad/2,rad,rad);}
+  };requestAnimationFrame(draw);
 })();
 </script>
 </body>
