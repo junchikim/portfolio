@@ -184,6 +184,42 @@
   .bubble .bd{padding:12px;white-space:pre-wrap;color:#222;line-height:1.5}
   .bubble .bt{margin:0 12px 12px;border:1px solid #ddd;border-radius:6px;text-align:center;padding:7px;font-size:12.5px;color:#333}
 
+  /* growth diagnosis */
+  .gd-first{border:1px solid var(--ink);padding:22px}
+  .gd-first .lbl{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.05em}
+  .gd-first .now{font-size:clamp(18px,2.2vw,23px);font-weight:800;letter-spacing:-.02em;line-height:1.4;margin:6px 0 16px}
+  .gd-first .now em{font-style:normal;color:var(--red)}
+  .todo{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+  .todo th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-3);border-bottom:1px solid var(--rule);padding:7px 8px}
+  .todo td{border-bottom:1px solid var(--line);padding:10px 8px;vertical-align:top}
+  .todo td.k{font-weight:700;white-space:nowrap}
+  .stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  @media(max-width:900px){.stages{grid-template-columns:1fr}}
+  .stg{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px;position:relative}
+  .stg .sn{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+  .stg .st{font-weight:800;font-size:15px;margin:2px 0 8px}
+  .stg .m{font-size:12px;color:var(--ink-2);display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding-top:6px;margin-top:6px}
+  .stg .m b{font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+  .stg .m small{display:block;color:var(--ink-3);font-size:11px}
+  .stg.bad{background:var(--red-soft)} .stg.warn{background:var(--amber-soft)}
+  .lv{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:700;padding:1px 6px;border:1px solid currentColor;border-radius:2px}
+  .lv.good{color:var(--accent)} .lv.warn{color:var(--amber)} .lv.bad{color:var(--red)}
+  .checks{display:grid;gap:0}
+  .chkrow{display:grid;grid-template-columns:54px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .chkrow .s{font-family:var(--mono);font-size:11px;font-weight:700}
+  .chkrow.ok .s{color:var(--accent)} .chkrow.fail .s{color:var(--red)}
+  .chkrow p{color:var(--ink-2);font-size:12.5px}
+  .road{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  @media(max-width:900px){.road{grid-template-columns:1fr}}
+  .stp{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px}
+  .stp .w{font-family:var(--mono);font-size:11px;color:var(--accent)}
+  .stp h5{font-size:15px;margin:4px 0 8px;letter-spacing:-.01em}
+  .stp ul{list-style:none;display:grid;gap:8px}
+  .stp li{font-size:13px;border-top:1px solid var(--line);padding-top:8px}
+  .stp li b{display:block}
+  .stp li span{color:var(--ink-2);font-size:12.5px}
+  .gd-foot{margin-top:14px;font-size:12px;color:var(--ink-3)}
+
   /* works grid */
   .grid{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 28px}
   @media(max-width:860px){.grid{grid-template-columns:1fr}}
@@ -284,6 +320,7 @@
     <p class="lead">8년 동안 광고부터 CRM까지 그로스를 맡으며, 반복되는 분석과 운영은 도구로 만들어 팀이 같이 쓰게 했습니다. 실무에서 쓰는 분석 방식을 샘플 데이터로 직접 돌려 볼 수 있게 데모로 옮겼습니다.</p>
     <div class="hero-try">
       <a class="try-link" href="#try-repurchase"><div><div class="n">TRY 01</div><h3>재구매·아하모먼트 분석</h3><p>주문 데이터로 재구매 주기, 첫 구매 상품별 LTV, 다시 사게 만드는 행동과 발송 조건 초안까지</p></div><span class="arr">→</span></a>
+      <a class="try-link" href="#try-diagnosis"><div><div class="n">TRY 02</div><h3>그로스 진단</h3><p>샘플 브랜드 세 곳의 데이터로 퍼널별 현황을 판정하고, 다음에 풀 과제를 단계별로 정리합니다</p></div><span class="arr">→</span></a>
     </div>
     <div class="hero-meta">
       <span><b>NOW</b>리인벤팅 마케팅팀 팀장 · 마케팅 CRM 솔루션 Retous 기획·운영</span>
@@ -323,11 +360,30 @@
   </div>
 </section>
 
-<section class="sec" id="try-alimtalk">
+<section class="sec" id="try-diagnosis">
   <div class="wrap">
     <div class="sh rv"><span class="lb">02 — TRY</span><span class="rt">바로 실행</span></div>
+    <h2>그로스 진단</h2>
+    <p class="sub">실무에서는 Python과 Claude API로 돌리는 그로스 진단 템플릿입니다. 광고·주문·GA4 데이터로 퍼널 단계마다 지금 상태를 판정하고, 데이터를 근거로 다음에 풀어야 할 과제를 단계별로 정리합니다. 같은 판정 규칙으로 샘플 브랜드 세 곳을 진단해 볼 수 있게 데모를 만들었습니다. 브랜드마다 진단 결과가 어떻게 달라지는지 비교해 보세요.</p>
+    <div class="demo rv">
+      <div class="demo-bar">
+        <div class="t">샘플 브랜드 선택<small id="gd-src">최근 90일 광고·주문·GA4 합성 데이터</small></div>
+        <div class="btns" id="gd-brands">
+          <button class="btn primary" data-b="coffee">오늘의원두 · 커피</button>
+          <button class="btn" data-b="skin">하루결 · 스킨케어</button>
+          <button class="btn" data-b="pet">꼬리친구 · 반려용품</button>
+        </div>
+      </div>
+      <div class="demo-body" id="gd-out"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="try-alimtalk">
+  <div class="wrap">
+    <div class="sh rv"><span class="lb">03 — TRY</span><span class="rt">바로 실행</span></div>
     <h2>알림톡 문구 심사 검사기</h2>
-    <p class="sub">알림톡은 카카오 심사를 통과해야 보낼 수 있고, 반려되면 다시 받기까지 영업일 2일이 걸립니다. 실제 반려 사유와 공식 제작 가이드를 규칙으로 정리해 CRM 문구 워크플로우에 넣었고, 그중 일부를 옮겼습니다.</p>
+    <p class="sub">알림톡은 카카오 심사를 통과해야 보낼 수 있고, 반려되면 다시 받기까지 영업일 2일이 걸립니다. 실제 반려 사유와 공식 제작 가이드를 CRM 문구 워크플로우의 '채널 가이드' 시트에 규칙으로 정리해, 문구를 만들 때 등록 전에 걸러 냅니다. 가이드가 바뀌면 코드는 그대로 두고 시트만 고쳐 다음 생성부터 반영합니다. 그 규칙 일부를 옮겼습니다.</p>
     <div class="demo rv">
       <div class="demo-bar">
         <div class="t">알림톡 · 이미지형<small>문구를 고치면 바로 다시 검사합니다</small></div>
@@ -360,7 +416,7 @@
 
 <section class="sec" id="works">
   <div class="wrap">
-    <div class="sh rv"><span class="lb">03 — WORKS</span><span class="rt">화면으로 보기 · 6</span></div>
+    <div class="sh rv"><span class="lb">04 — WORKS</span><span class="rt">화면으로 보기 · 6</span></div>
     <h2>업무에 쓰고 있는 도구들</h2>
     <p class="sub">설계와 기준은 직접 정하고, 구현은 Claude Code·Apps Script·Claude API로 했습니다. 회사 업무로 만든 도구는 고객사 데이터 없이 가상 브랜드로 다시 구성했습니다.</p>
 
@@ -377,6 +433,7 @@
           <li>계산과 검수는 코드로 고정하고, 해석과 문장은 AI가 맡게 나눠 누가 돌려도 같은 숫자가 나오게 함</li>
           <li>실데이터 검증 중 하루치 광고비 누락(4.3%) 같은 데이터 문제를 찾으면, 다음부터 자동으로 잡히는 점검 규칙으로 추가</li>
         </ul></details>
+        <a class="link" href="#try-diagnosis">위에서 샘플 브랜드로 진단해 보기 ↑</a>
       </article>
 
       <article class="item rv">
@@ -477,7 +534,7 @@
 
 <section class="sec" id="how">
   <div class="wrap">
-    <div class="sh rv"><span class="lb">04 — HOW I BUILD</span><span class="rt"></span></div>
+    <div class="sh rv"><span class="lb">05 — HOW I BUILD</span><span class="rt"></span></div>
     <h2>도구를 만들 때 지키는 순서</h2>
     <div class="prin rv">
       <div><span class="n">01</span><b>무엇을 잴지부터</b><p>만들기 전에 결과 지표와 과정 지표, 몇이 나오면 성공인지부터 정합니다.</p></div>
@@ -489,7 +546,7 @@
 
 <section class="sec" id="career">
   <div class="wrap">
-    <div class="sh rv"><span class="lb">05 — CAREER</span><span class="rt">2017 – NOW</span></div>
+    <div class="sh rv"><span class="lb">06 — CAREER</span><span class="rt">2017 – NOW</span></div>
     <h2>경력</h2>
     <div class="career rv">
       <div class="cr"><div class="w">2024.06 – 현재</div><div class="o">리인벤팅<span>마케팅팀 팀장</span></div><div class="d">마케팅 CRM 솔루션 Retous 기획·운영, 브랜드 그로스 전략 설계·실행. 실무자 최대 3명과 브랜드 최대 3곳 동시 운영</div></div>
@@ -509,7 +566,6 @@
     <a class="mail" href="mailto:junchikim321@gmail.com">junchikim321@gmail.com</a>
     <div class="links">
       <a href="https://www.linkedin.com/in/junchi-kim" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a href="cases.html">프로젝트 사례 자세히 보기 →</a>
     </div>
     <p class="fine">이 페이지의 브랜드명과 데이터는 모두 가상입니다. 실제 고객사 데이터는 쓰지 않았습니다. © 2026 Junchi Kim</p>
   </div>
@@ -732,6 +788,140 @@
   ['ak-title','ak-body','ak-btn'].forEach(id=>$(id).addEventListener('input',()=>{VAR.lastIndex=0;check();}));
   $('ak-bad').onclick=()=>set('bad'); $('ak-good').onclick=()=>set('good');
   set('bad');
+})();
+
+/* ---------- 그로스 진단 ---------- */
+(function(){
+  const out=document.getElementById('gd-out'); if(!out)return;
+  const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+  const pct=(x,d=1)=>(x*100).toFixed(d)+'%';
+  const fmt=n=>Math.round(n).toLocaleString('ko-KR');
+  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}}
+  // 샘플 브랜드: 같은 생성기, 다른 파라미터
+  const BRANDS={
+    coffee:{name:'오늘의원두',cat:'커피',seed:11,spend:420000,cpm:5200,ctr:.0118,sesPerClick:1.5,organic:380,cart:.068,c2p:.37,aov:24800,margin:.38,rep60:.13,mediaOver:1.42,ga4Capture:.82,missDay:{ch:'Meta',d:41}},
+    skin:{name:'하루결',cat:'스킨케어',seed:22,spend:610000,cpm:6100,ctr:.0052,sesPerClick:1.4,organic:260,cart:.092,c2p:.31,aov:38500,margin:.52,rep60:.31,mediaOver:1.25,ga4Capture:.96,missDay:null},
+    pet:{name:'꼬리친구',cat:'반려용품',seed:33,spend:350000,cpm:4800,ctr:.0109,sesPerClick:1.6,organic:450,cart:.081,c2p:.21,aov:31200,margin:.34,rep60:.24,mediaOver:1.3,ga4Capture:.94,missDay:null}
+  };
+  const CH=[['Meta',.5],['네이버 검색광고',.3],['Google',.2]];
+  function generate(b){
+    const r=rng(b.seed),days=90,ads=[],daily=[];const n=()=>1+(r()+r()+r()-1.5)*.18;
+    for(let d=0;d<days;d++){
+      let spend=0,imp=0,clk=0;
+      for(const[ch,sh]of CH){const sp=b.spend*sh*n(),im=sp/b.cpm*1000,ck=im*b.ctr*n();
+        spend+=sp;imp+=im;clk+=ck; // 실제 집행
+        if(!(b.missDay&&b.missDay.ch===ch&&b.missDay.d===d))ads.push({d,ch,spend:sp,imp:im,clk:ck}); // 받은 광고 원본
+      }
+      const ses=clk*b.sesPerClick+b.organic*n(), cart=ses*b.cart*n(), newOrd=cart*b.c2p*n();
+      daily.push({d,spend,imp,clk,ses,cart,newOrd});
+    }
+    // 재구매: 첫 30일 신규 고객 코호트의 60일 재구매
+    const cohort=daily.slice(0,30).reduce((s,x)=>s+x.newOrd,0);
+    const repeaters=cohort*b.rep60*(1+(r()-.5)*.08);
+    const newTotal=daily.reduce((s,x)=>s+x.newOrd,0);
+    const repeatOrders=newTotal*b.rep60*0.9*(1+(r()-.5)*.1);
+    const orders=newTotal+repeatOrders, revenue=orders*b.aov*(1+(r()-.5)*.04);
+    const ga4Purchases=orders*b.ga4Capture;
+    const adSpendReported=ads.reduce((s,x)=>s+x.spend,0), adSpendActual=daily.reduce((s,x)=>s+x.spend,0);
+    const adDays=new Set(ads.map(a=>a.ch+'|'+a.d)).size;
+    const adPurchMedia=newTotal*0.62*b.mediaOver;
+    return{daily,ads,cohort,repeaters,newTotal,repeatOrders,orders,revenue,ga4Purchases,adSpendReported,adSpendActual,adDays,adPurchMedia,
+      imp:daily.reduce((s,x)=>s+x.imp,0),clk:daily.reduce((s,x)=>s+x.clk,0),ses:daily.reduce((s,x)=>s+x.ses,0),cart:daily.reduce((s,x)=>s+x.cart,0)};
+  }
+  // 판정 기준 (실무 버전에서는 고객사별 설정 파일 값)
+  const T={ctr:[.010,.006],cart:[.08,.05],c2p:[.35,.25],rep:[.30,.20],cacRatio:[.8,1.0],ga4:[.90],adDays:true};
+  const lvl=(v,[g,w],lower=false)=>lower?(v<=g?'good':v<=w?'warn':'bad'):(v>=g?'good':v>=w?'warn':'bad');
+  const LV={good:'양호',warn:'주의',bad:'위험'};
+  function diagnose(b){
+    const D=generate(b);
+    const ctr=D.clk/D.imp, cart=D.cart/D.ses, c2p=D.newTotal/D.cart, rep=D.repeaters/D.cohort;
+    const cacReal=D.adSpendActual/D.newTotal, cacMedia=D.adSpendReported/D.adPurchMedia;
+    const firstProfit=b.aov*b.margin, beCac=firstProfit*(1+rep*1.3);
+    const cacRatio=cacReal/beCac;
+    const repShare=D.repeatOrders/D.orders;
+    const ga4Ratio=D.ga4Purchases/D.orders, missing=90*CH.length-D.adDays;
+    const checks=[
+      {ok:missing===0,n:'광고 원본에 빠진 날 없음',d:missing===0?'채널 3개 × 90일 모두 있음':`${b.missDay.ch} ${b.missDay.d+1}일 차 데이터 없음 · 실제 집행 대비 광고비 ${pct(1-D.adSpendReported/D.adSpendActual)} 누락`},
+      {ok:ga4Ratio>=T.ga4[0],n:'GA4 구매와 실제 주문 수 일치 (90% 이상)',d:`GA4 구매 ${fmt(D.ga4Purchases)}건 / 주문 ${fmt(D.orders)}건 = ${pct(ga4Ratio)}`},
+      {ok:true,n:'광고 매체 구매와 실제 신규 구매 분리',d:`매체 CAC(광고비 ÷ 광고로 발생한 구매) ${won(cacMedia)} · 실질 CAC(광고비 ÷ 전체 신규 구매) ${won(cacReal)}`}
+    ];
+    const S=[
+      {k:'유입',lv:lvl(ctr,T.ctr),m:[['광고 클릭률',pct(ctr,2),'기준 1.0%'],['90일 세션',fmt(D.ses),'']],metric:'ctr',val:ctr},
+      {k:'탐색',lv:lvl(cart,T.cart),m:[['장바구니 담기율',pct(cart),'기준 8%'],['장바구니',fmt(D.cart)+'건','']],metric:'cart',val:cart},
+      {k:'전환',lv:lvl(c2p,T.c2p),m:[['장바구니 → 구매',pct(c2p),'기준 35%'],['신규 구매',fmt(D.newTotal)+'건','']],metric:'c2p',val:c2p},
+      {k:'재구매',lv:lvl(rep,T.rep),m:[['60일 재구매율',pct(rep),'기준 30%'],['재구매 주문 비중',pct(repShare),'']],metric:'rep',val:rep},
+      {k:'수익성',lv:lvl(cacRatio,T.cacRatio,true),m:[['실질 CAC',won(cacReal),''],['손익분기 CAC',won(beCac),'첫 구매 + 재구매 공헌이익']],metric:'cac',val:cacRatio}
+    ];
+    // 과제 후보: 목표치까지 올렸을 때 30일 매출 영향으로 우선순위
+    const per30=x=>x/3;
+    const tasks=[];
+    const add=(stage,lv,title,how,who,when,from,to,impact)=>tasks.push({stage,lv,title,how,who,when,from,to,impact});
+    if(S[0].lv!=='good')add('유입',S[0].lv,'광고 소재 메시지 바꾸기','구매 동기(MEC) 기준으로 소재 3안 A/B 테스트, 클릭률 낮은 소재 정리','퍼포먼스 담당','3주','광고 클릭률 '+pct(ctr,2),'1.0%',per30(D.newTotal*(T.ctr[0]/ctr-1)*0.6*b.aov));
+    if(S[1].lv!=='good')add('탐색',S[1].lv,'상세 페이지 첫 화면 정리','장바구니 담기율이 낮은 상품부터 첫 화면·가격 표시 점검','사이트 담당','4주','장바구니 담기율 '+pct(cart),'8%',per30(D.newTotal*(T.cart[0]/cart-1)*b.aov));
+    if(S[2].lv!=='good')add('전환',S[2].lv,'장바구니 이탈 회수','장바구니 담고 1일 미구매 고객에게 리마인드 발송, 결제 단계 오류 점검','CRM 담당','2주','장바구니 → 구매 '+pct(c2p),'35%',per30(D.cart*(T.c2p[0]-c2p)*b.aov));
+    if(S[3].lv!=='good')add('재구매',S[3].lv,'두 번째 구매 만들기','첫 구매 후 재구매 주기에 맞춘 메시지와 두 번째 구매 혜택 설계','CRM 담당','4주','60일 재구매율 '+pct(rep),'30%',per30(D.newTotal*(T.rep[0]-rep)*b.aov));
+    if(S[4].lv!=='good')add('수익성',S[4].lv,'광고 예산 기준을 실질 CAC로','매체 보고 CAC가 아니라 실제 신규 구매 기준으로 예산 배분, 손익분기 넘는 캠페인 축소','퍼포먼스 담당','2주','실질 CAC '+won(cacReal),won(beCac*T.cacRatio[0])+' 이하',per30(Math.max(0,(cacReal-beCac*T.cacRatio[0]))*D.newTotal));
+    tasks.sort((a,b)=>(b.lv==='bad')-(a.lv==='bad')||b.impact-a.impact);
+    const fixes=checks.filter(c=>!c.ok);
+    const worst=S.filter(s=>s.lv==='bad').map(s=>s.k);
+    const warnS=S.filter(s=>s.lv==='warn').map(s=>s.k);
+    let now;
+    if(worst.length) now=`<em>${worst.join('·')}</em> 단계에서 가장 크게 막혀 있습니다.`+(fixes.length?' 다만 측정 데이터부터 바로잡아야 숫자를 믿을 수 있습니다.':'');
+    else now=`큰 막힘은 없고, ${warnS.join('·')||'전 단계'} 단계를 끌어올릴 차례입니다.`;
+    const top3=[];
+    if(fixes.length){const g=[];if(missing)g.push('빠진 광고 데이터 다시 받기');if(ga4Ratio<T.ga4[0])g.push(`GA4 구매 수집률 ${pct(ga4Ratio)} → 90% 이상`);top3.push({k:'측정 바로잡기',who:'데이터 담당',when:'1주',goal:g.join(' · ')});}
+    for(const t of tasks){if(top3.length>=3)break;top3.push({k:t.title,who:t.who,when:t.when,goal:`${t.from} → ${t.to}`});}
+    return{b,D,checks,S,tasks,top3,now,cacReal,cacMedia,rep,c2p};
+  }
+  function render(x){
+    const {b,D,checks,S,tasks,top3,now}=x; const bad=S.filter(s=>s.lv!=='good').length;
+    const step1=checks.filter(c=>!c.ok);
+    const later=tasks.slice(0);
+    const s2=later.filter(t=>t.lv==='bad').slice(0,2), s3=later.filter(t=>!s2.includes(t)).slice(0,2);
+    return `
+    <div class="gd-first">
+      <div class="lbl">진단 문서 첫 장 · ${b.name} (${b.cat}) · 최근 90일</div>
+      <div class="now">${now}</div>
+      <div class="kpis" style="margin-bottom:16px">
+        <div class="kpi"><div class="c">매출</div><div class="v">${(D.revenue/1e8>=1?(D.revenue/1e8).toFixed(2)+'억':Math.round(D.revenue/1e4).toLocaleString('ko-KR')+'만')}</div><div class="d">주문 ${fmt(D.orders)}건</div></div>
+        <div class="kpi"><div class="c">실질 CAC</div><div class="v">${won(x.cacReal)}</div><div class="d">매체 CAC ${won(x.cacMedia)}</div></div>
+        <div class="kpi"><div class="c">장바구니 → 구매</div><div class="v">${pct(x.c2p)}</div><div class="d">신규 구매 ${fmt(D.newTotal)}건</div></div>
+        <div class="kpi"><div class="c">60일 재구매율</div><div class="v">${pct(x.rep)}</div><div class="d">첫 30일 신규 고객 기준</div></div>
+      </div>
+      <div class="lbl">할 일 3개</div>
+      <div class="tbl-wrap"><table class="todo"><tr><th>할 일</th><th>누가</th><th>언제까지</th><th>어떤 숫자를 얼마로</th></tr>
+        ${top3.map(t=>`<tr><td class="k">${t.k}</td><td>${t.who}</td><td>${t.when}</td><td>${t.goal}</td></tr>`).join('')}
+      </table></div>
+    </div>
+
+    <div class="blk">
+      <h4>1. 측정 점검</h4>
+      <p class="why">지표를 보기 전에 받은 데이터가 전체인지부터 확인합니다. 여기서 걸리면 과제의 첫 단계가 됩니다.</p>
+      <div class="checks">${checks.map(c=>`<div class="chkrow ${c.ok?'ok':'fail'}"><span class="s">${c.ok?'PASS':'FAIL'}</span><div><b>${c.n}</b><p>${c.d}</p></div></div>`).join('')}</div>
+    </div>
+
+    <div class="blk">
+      <h4>2. 퍼널 단계별 현황</h4>
+      <p class="why">단계마다 기준값과 비교해 양호·주의·위험을 판정합니다. 기준값은 실무에서 고객사별 설정 파일로 바꿉니다. 위험·주의 ${bad}개 단계.</p>
+      <div class="stages">${S.map((s,i)=>`<div class="stg ${s.lv==='good'?'':s.lv}"><div class="sn">STAGE ${i+1}</div><div class="st">${s.k} <span class="lv ${s.lv}">${LV[s.lv]}</span></div>${s.m.map(m=>`<div class="m"><span>${m[0]}${m[2]?`<small>${m[2]}</small>`:''}</span><b>${m[1]}</b></div>`).join('')}</div>`).join('')}</div>
+    </div>
+
+    <div class="blk">
+      <h4>3. 단계별 과제</h4>
+      <p class="why">위험한 단계를 먼저, 같은 등급이면 목표치까지 올렸을 때 30일 매출 영향이 큰 순서로 정렬했습니다.</p>
+      <div class="road">
+        <div class="stp"><div class="w">STEP 1 · 이번 주</div><h5>측정 바로잡기</h5><ul>${step1.length?step1.map(c=>`<li><b>${c.n.split(' (')[0]}</b><span>${c.d}</span></li>`).join(''):'<li><b>측정 문제 없음</b><span>바로 STEP 2로 넘어갑니다</span></li>'}</ul></div>
+        <div class="stp"><div class="w">STEP 2 · 2~4주</div><h5>가장 막힌 단계 풀기</h5><ul>${(s2.length?s2:later.slice(0,1)).map(t=>`<li><b>${t.title}</b><span>${t.how}<br>${t.from} → ${t.to} · 30일 매출 영향 약 ${won(t.impact)}</span></li>`).join('')||'<li><b>위험 단계 없음</b></li>'}</ul></div>
+        <div class="stp"><div class="w">STEP 3 · 다음 달</div><h5>다음 단계 끌어올리기</h5><ul>${s3.length?s3.map(t=>`<li><b>${t.title}</b><span>${t.how}<br>${t.from} → ${t.to}</span></li>`).join(''):'<li><b>추가 과제 없음</b><span>현 수준을 유지하며 재진단</span></li>'}</ul></div>
+      </div>
+      <p class="gd-foot">실무 버전에서는 이 판정 결과를 바탕으로 AI가 진단 문서 5종의 문장을 쓰고, 문서 속 숫자가 계산값과 다르면 자동 검수에서 걸립니다.</p>
+    </div>`;
+  }
+  const btns=[...document.querySelectorAll('#gd-brands .btn')];
+  const show=k=>{btns.forEach(b=>b.classList.toggle('primary',b.dataset.b===k));const x=diagnose(BRANDS[k]);out.innerHTML=render(x);
+    document.getElementById('gd-src').textContent=`${BRANDS[k].name} · 최근 90일 광고·주문·GA4 합성 데이터`;};
+  btns.forEach(b=>b.onclick=()=>show(b.dataset.b));
+  show('coffee');
 })();
 
 /* ---------- 효과 ---------- */
