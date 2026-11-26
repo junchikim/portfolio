@@ -18,7 +18,7 @@
     --accent:#1F4BFF; --accent-soft:rgba(31,75,255,.08);
     --red:#D92D20; --red-soft:rgba(217,45,32,.08);
     --amber:#B54708; --amber-soft:rgba(181,71,8,.09);
-    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --mono:'JetBrains Mono','Pretendard',ui-monospace,SFMono-Regular,Menlo,monospace;
     --sans:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
     --maxw:1200px;
   }
@@ -139,7 +139,7 @@
   .tbl-wrap{overflow-x:auto}
   .bar{position:relative;height:6px;background:var(--panel);min-width:90px}
   .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--ink)}
-  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border:1px solid currentColor;border-radius:2px;white-space:nowrap;font-family:var(--mono)}
+  .tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border:1px solid currentColor;border-radius:2px;white-space:nowrap;font-family:var(--sans)}
   .tag.strong{color:var(--accent);background:var(--accent-soft)}
   .tag.maybe{color:var(--ink)}
   .tag.none{color:var(--ink-3);border-color:var(--line)}
@@ -203,7 +203,7 @@
   .stg .m b{font-family:var(--mono);font-size:12.5px;color:var(--ink)}
   .stg .m small{display:block;color:var(--ink-3);font-size:11px}
   .stg.bad{background:var(--red-soft)} .stg.warn{background:var(--amber-soft)}
-  .lv{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:700;padding:1px 6px;border:1px solid currentColor;border-radius:2px}
+  .lv{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;padding:1px 7px;border:1px solid currentColor;border-radius:2px;vertical-align:2px}
   .lv.good{color:var(--accent)} .lv.warn{color:var(--amber)} .lv.bad{color:var(--red)}
   .checks{display:grid;gap:0}
   .chkrow{display:grid;grid-template-columns:54px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
@@ -221,13 +221,24 @@
   .stp li span{color:var(--ink-2);font-size:12.5px}
   .gd-foot{margin-top:14px;font-size:12px;color:var(--ink-3)}
 
+  .zone{padding:72px 0 8px}
+  .zone-try{background:#EDEDE9}
+  .zone-works{background:var(--bg)}
+  .zone-about{background:var(--white);border-top:1px solid var(--line)}
+  .zone-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:8px}
+  .zone-head .big{font-size:clamp(44px,8vw,104px);font-weight:800;letter-spacing:-.05em;line-height:.9}
+  .zone-head .big span{color:var(--accent)}
+  .zone-head p{max-width:420px;font-size:14px;color:var(--ink-2);padding-bottom:8px}
+  .zone .sec{padding:40px 0 72px}
+  .zone-try .demo{box-shadow:0 18px 40px -28px rgba(0,0,0,.35)}
   /* works grid */
   .grid{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 28px}
   @media(max-width:860px){.grid{grid-template-columns:1fr}}
   .item .vis{background:var(--panel);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:28px;overflow:hidden;position:relative}
   .item .vis img{max-width:100%;max-height:100%;display:block;box-shadow:0 10px 30px -14px rgba(0,0,0,.25)}
   .item .vis.cover{padding:0} .item .vis.cover img{width:100%;height:100%;object-fit:cover;object-position:top;box-shadow:none}
-  .item .meta{display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding-bottom:10px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em}
+  .item .meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:16px;padding-bottom:10px;border-bottom:1px solid var(--rule);font-size:13.5px;font-weight:700;color:var(--ink)}
+  .item .meta span:last-child{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--ink-2)}
   .item h3{margin-top:12px;font-size:19px;letter-spacing:-.02em;line-height:1.4}
   .item .p{margin-top:6px;font-size:14px;color:var(--ink-2)}
   .item details{margin-top:12px}
@@ -331,12 +342,13 @@
       <div class="hstat"><div class="v" data-n="8" data-pre="" data-suf="년차">8년차</div><div class="c">광고 · 앱 그로스 · CRM</div></div>
       <div class="hstat"><div class="v" data-n="50" data-pre="" data-suf="종">50종</div><div class="c">직접 설계한 CRM 발송 대상 조건</div></div>
       <div class="hstat"><div class="v" data-n="116" data-pre="+" data-suf="%">+116%</div><div class="c">마이데이터 앱 재방문율 (6개월)</div></div>
-      <div class="hstat"><div class="v" data-n="41" data-pre="" data-suf="일">41일</div><div class="c">게임 기획부터 출시까지 (1인)</div></div>
+      <div class="hstat"><div class="v" data-n="3.2" data-pre="" data-suf="배" data-dec="1">3.2배</div><div class="c">유제품 정기배송 쇼핑몰 하루 매출</div></div>
     </div>
   </div>
 </section>
 
-<div id="try"></div>
+<div class="zone zone-try" id="try">
+  <div class="wrap zone-head"><div class="big">TRY<span>.</span></div><p>실무에서 쓰는 분석을 샘플 데이터로 직접 돌려 보는 데모 3개</p></div>
 <section class="sec" id="try-repurchase">
   <div class="wrap">
     <div class="sh rv"><span class="lb">01 — TRY</span><span class="rt">바로 실행</span></div>
@@ -347,15 +359,12 @@
         <div class="t">오늘의원두 <span style="font-weight:400;color:var(--ink-3)">(가상 커피 쇼핑몰)</span><small id="rp-src">샘플 주문 데이터 · 고객 800명 · 약 1년</small></div>
         <div class="btns">
           <button class="btn primary" id="rp-run">샘플 데이터로 실행</button>
-          <label class="btn" for="rp-file">내 CSV 올리기</label>
-          <input type="file" id="rp-file" accept=".csv,text/csv" hidden>
-          <button class="btn ghost" id="rp-dl">샘플 CSV 받기</button>
         </div>
       </div>
       <div class="demo-body">
         <div id="rp-map" hidden></div>
         <div id="rp-out"><div class="empty">버튼을 누르면 분석 결과가 여기에 나옵니다.</div></div>
-        <div class="privacy">파일은 이 브라우저 안에서만 읽고 어디로도 보내지 않습니다 · 필요한 열: 고객 ID, 주문일, 상품명, 결제 금액</div>
+        <div class="privacy">입력 데이터: 고객 ID · 주문일 · 상품명 · 결제 금액 (실무에서는 쇼핑몰 주문 원본을 그대로 넣습니다)</div>
       </div>
     </div>
   </div>
@@ -415,6 +424,10 @@
   </div>
 </section>
 
+</div>
+
+<div class="zone zone-works">
+  <div class="wrap zone-head"><div class="big">WORKS<span>.</span></div><p>업무에 쓰고 있는 도구 6개와 사이드 프로젝트. 회사 도구는 가상 브랜드로 다시 구성</p></div>
 <section class="sec" id="works">
   <div class="wrap">
     <div class="sh rv"><span class="lb">04 — WORKS</span><span class="rt">화면으로 보기 · 6</span></div>
@@ -492,7 +505,7 @@
 
       <article class="item rv">
         <div class="vis game"><img src="game_store.jpg" alt="내 연봉 키우기 Google Play 스토어 등록 이미지" loading="lazy">
-          <div class="stats"><div class="stat"><div class="v">41일</div><div class="c">기획부터 출시까지</div></div><div class="stat"><div class="v">7회</div><div class="c">테스트 중 업데이트</div></div><div class="stat"><div class="v">0건</div><div class="c">비정상 종료·ANR</div></div></div>
+          <div class="stats"><div class="stat"><div class="v">1인</div><div class="c">기획·측정 설계·출시</div></div><div class="stat"><div class="v">7회</div><div class="c">테스트 의견 반영 업데이트</div></div><div class="stat"><div class="v">0건</div><div class="c">비정상 종료·ANR</div></div></div>
         </div>
         <div class="meta"><span>05 · 사이드 프로젝트</span><span>Unity · Firebase · GA4</span></div>
         <h3>모바일 방치형 게임 「내 연봉 키우기」</h3>
@@ -533,6 +546,10 @@
   </div>
 </section>
 
+</div>
+
+<div class="zone zone-about">
+  <div class="wrap zone-head"><div class="big">ABOUT<span>.</span></div><p>도구를 만드는 기준과 경력</p></div>
 <section class="sec" id="how">
   <div class="wrap">
     <div class="sh rv"><span class="lb">05 — HOW I BUILD</span><span class="rt"></span></div>
@@ -560,6 +577,8 @@
     <p class="awards"><b>CERT · AWARDS</b>데이터분석 준전문가(ADsP) 2024.11 · 2023 한국어 AI 경진대회 장려상 · 2016 지역기업-청년 희망이음프로젝트 동상 · 제2회 글로벌 이노베이터 페스타 동상 · 제6회 롯데 아이디어공모전 본선진출</p>
   </div>
 </section>
+
+</div>
 
 <footer id="contact">
   <div class="wrap">
@@ -727,9 +746,9 @@
   const out=document.getElementById('rp-out'), src=document.getElementById('rp-src'), mapBox=document.getElementById('rp-map');
   function run(rows,label){try{const R=analyze(rows);out.innerHTML=render(R);src.textContent=label+` · 고객 ${R.N.toLocaleString('ko-KR')}명 · 주문 행 ${R.rowsUsed.toLocaleString('ko-KR')}개`;}catch(e){out.innerHTML=`<div class="err">${esc(e.message)}</div>`;}}
   document.getElementById('rp-run').onclick=()=>{mapBox.hidden=true;run(sample(),'샘플 주문 데이터');};
-  document.getElementById('rp-dl').onclick=()=>{const b=new Blob(['﻿'+toCSV(sample())],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='sample_orders_오늘의원두.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
-  document.getElementById('rp-file').onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();
-    rd.onload=()=>{let text=rd.result;if(text.charCodeAt(0)===0xFEFF)text=text.slice(1);const rows=parseCSV(text);if(rows.length<2){out.innerHTML='<div class="err">읽을 수 있는 행이 없습니다.</div>';return;}
+  const _dl=document.getElementById('rp-dl'); if(_dl)_dl.onclick=()=>{const b=new Blob(['﻿'+toCSV(sample())],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='sample_orders_오늘의원두.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
+  const _fi=document.getElementById('rp-file'); if(_fi)_fi.onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();
+    rd.onload=()=>{let text=rd.result;if(!rd._kr&&text.includes('\uFFFD')){rd._kr=1;rd.readAsText(f,'euc-kr');return;}if(text.charCodeAt(0)===0xFEFF)text=text.slice(1);const rows=parseCSV(text);if(rows.length<2){out.innerHTML='<div class="err">읽을 수 있는 행이 없습니다.</div>';return;}
       const head=rows[0].map(h=>h.trim()),m=guess(head);
       const opts=i=>head.map((h,j)=>`<option value="${j}" ${i===j?'selected':''}>${esc(h)}</option>`).join('');
       mapBox.hidden=false;
@@ -771,9 +790,9 @@
     const past=PAST.flatMap(re=>b.match(re)||[]);
     R.push({s:past.length?'fail':'ok',n:'과거 시점 표현 없음',d:past.length?`알림톡은 일이 생긴 즉시 보내는 안내여야 합니다: `+hl(b.split('\n').find(l=>PAST.some(re=>{re.lastIndex=0;return re.test(l);}))||'',new RegExp(PAST.map(r=>r.source).join('|'),'g')):'"어제", "N일 전", "지난주" 등 없음'});
     const ask=b.match(ASK)||[];
-    R.push({s:ask.length?'warn':'ok',n:'행동을 요구하는 표현 없음',d:ask.length?`정보 전달에 맞지 않아 광고성으로 볼 수 있습니다: ${[...new Set(ask)].map(x=>`<mark>${x}</mark>`).join(' ')}`:'안내만 담음'});
+    R.push({s:ask.length?'warn':'ok',n:'행동을 요구하는 표현 없음 (내부 작성 원칙)',d:ask.length?`정보 전달에 맞지 않아 광고성으로 볼 수 있습니다: ${[...new Set(ask)].map(x=>`<mark>${x}</mark>`).join(' ')}`:'안내만 담음'});
     const ad=(b+' '+bt).match(AD)||[];
-    R.push({s:ad.length?'warn':'ok',n:'광고성 표현 없음',d:ad.length?`할인·쿠폰·이벤트 안내는 브랜드메시지로 보내야 합니다: ${[...new Set(ad)].map(x=>`<mark>${x}</mark>`).join(' ')}`:'혜택·할인 안내 없음'});
+    R.push({s:ad.length?'warn':'ok',n:'광고성 표현 없음 (키워드로 먼저 걸러 봄)',d:ad.length?`할인·쿠폰·이벤트 안내는 브랜드메시지로 보내야 합니다: ${[...new Set(ad)].map(x=>`<mark>${x}</mark>`).join(' ')}`:'혜택·할인 안내 없음'});
     const vars=(b.match(VAR)||[]).length, rest=b.replace(VAR,'').replace(/[\s\p{P}]/gu,'');
     R.push({s:vars>40||(b.trim()&&!rest)?'fail':'ok',n:'변수 40개 이하, 변수로만 된 본문 아님',d:`변수 ${vars}개`});
     R.push({s:len(bt)<=14&&!HASVAR(bt)?'ok':'fail',n:'버튼명 14자 이내, 변수 없음',d:HASVAR(bt)?'버튼명에는 변수를 쓸 수 없습니다':`${len(bt)}자`});
@@ -933,7 +952,7 @@
   document.querySelectorAll('.rv').forEach(el=>reduce?el.classList.add('in'):io.observe(el));
   const nums=document.querySelectorAll('.hstat .v[data-n]');
   const run=el=>{const n=+el.dataset.n,pre=el.dataset.pre||'',suf=el.dataset.suf||'';const t0=performance.now(),D=1400;
-    const step=t=>{const p=Math.min(1,(t-t0)/D),e=1-Math.pow(1-p,3);el.textContent=pre+Math.round(n*e)+suf;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);};
+    const step=t=>{const p=Math.min(1,(t-t0)/D),e=1-Math.pow(1-p,3);el.textContent=pre+(el.dataset.dec?(n*e).toFixed(+el.dataset.dec):Math.round(n*e))+suf;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);};
   if(!reduce){const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){run(e.target);io2.unobserve(e.target);}}),{threshold:.6});nums.forEach(n=>io2.observe(n));}
   document.querySelectorAll('.item .vis').forEach(v=>v.addEventListener('mousemove',e=>{const r=v.getBoundingClientRect();v.style.setProperty('--mx',(e.clientX-r.left)+'px');v.style.setProperty('--my',(e.clientY-r.top)+'px');}));
   // 3D 점 토러스: 다시 돌아오는 고객의 고리
