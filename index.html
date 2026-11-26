@@ -223,28 +223,32 @@
 
   html{scroll-snap-type:y proximity}
   .zone{padding:0 0 8px}
-  .zone-try{background:#EDEDE9}
-  .zone-works{background:var(--bg)}
-  .zone-about{background:var(--white)}
-  .cover{min-height:100vh;min-height:100svh;display:flex;align-items:stretch;scroll-snap-align:start;position:relative;overflow:hidden}
-  .cover .wrap{width:100%;display:flex;flex-direction:column;justify-content:space-between;padding-top:96px;padding-bottom:56px}
-  .cover-try{background:var(--accent);color:#fff}
-  .cover-works{background:#0B0F14;color:#F2F2EF}
-  .cover-about{background:#F2F2EF;color:var(--ink)}
+  .zcover{min-height:100vh;min-height:100svh;display:flex;align-items:stretch;position:relative;overflow:hidden}
+  .zcover .wrap{width:100%;display:flex;flex-direction:column;justify-content:space-between;padding-top:96px;padding-bottom:56px}
+  .zcover-try{background:var(--accent);color:#fff}
+  .zcover-works{background:#0B0F14;color:#F2F2EF}
+  .zcover-about{background:#F2F2EF;color:var(--ink)}
   .cv-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:.06em;opacity:.8;border-top:1px solid currentColor;padding-top:14px}
   .cv-big{font-size:clamp(84px,19vw,280px);font-weight:800;letter-spacing:-.06em;line-height:.82;transform:translateY(40px);opacity:0;transition:transform 1s cubic-bezier(.2,.8,.2,1),opacity 1s}
   .cv-big i{font-style:normal;color:#0B0F14}
-  .cover-works .cv-big i{color:#6F8BFF} .cover-about .cv-big i{color:var(--accent)}
-  .cover.in .cv-big{transform:none;opacity:1}
+  .zcover-works .cv-big i{color:#6F8BFF} .zcover-about .cv-big i{color:var(--accent)}
+  .zcover.in .cv-big{transform:none;opacity:1}
   .cv-bot{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:end;border-top:1px solid currentColor;padding-top:18px}
   @media(max-width:760px){.cv-bot{grid-template-columns:1fr}}
   .cv-line{font-size:clamp(20px,2.6vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.35}
   .cv-items{font-size:13.5px;opacity:.75;text-align:right}
   @media(max-width:760px){.cv-items{text-align:left}}
-  .cover::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;mask-image:linear-gradient(transparent,#000 40%,transparent)}
-  .cover-about::after{background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px)}
+  .zcover::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;mask-image:linear-gradient(transparent,#000 40%,transparent)}
+  .zcover-about::after{background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px)}
   .zone .sec:first-of-type{padding-top:72px}
   .zone .sec{padding:40px 0 72px;scroll-snap-align:none}
+  .zone{position:relative;scroll-snap-align:start}
+  .zcover{position:sticky;top:0;z-index:0}
+  .zone > .sec{position:relative;z-index:1}
+  .zone-body{position:relative;z-index:1;border-radius:28px 28px 0 0;margin-top:-28px;box-shadow:0 -24px 60px -20px rgba(0,0,0,.35);padding-top:8px}
+  .zone-try .zone-body{background:#EDEDE9} .zone-works .zone-body{background:var(--bg)} .zone-about .zone-body{background:var(--white)}
+  .zone + .zone{margin-top:0}
+
   .zone-try .demo{box-shadow:0 18px 40px -28px rgba(0,0,0,.35)}
   /* works grid */
   .grid{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 28px}
@@ -363,11 +367,12 @@
 </section>
 
 <div class="zone zone-try" id="try">
-  <div class="cover cover-try"><div class="wrap">
+  <div class="zcover zcover-try"><div class="wrap">
     <div class="cv-top"><span>01 / 03</span><span>TRY</span></div>
     <div class="cv-big">TRY<i>.</i></div>
     <div class="cv-bot"><p class="cv-line">실무에서 쓰는 분석을<br>샘플 데이터로 직접 돌려 봅니다.</p><p class="cv-items">재구매·아하모먼트 분석 · 그로스 진단 · 알림톡 문구 심사 검사기</p></div>
   </div></div>
+<div class="zone-body">
 <section class="sec" id="try-repurchase">
   <div class="wrap">
     <div class="sh rv"><span class="lb">01 — TRY</span><span class="rt">바로 실행</span></div>
@@ -444,13 +449,15 @@
 </section>
 
 </div>
+</div>
 
 <div class="zone zone-works">
-  <div class="cover cover-works"><div class="wrap">
+  <div class="zcover zcover-works"><div class="wrap">
     <div class="cv-top"><span>02 / 03</span><span>WORKS</span></div>
     <div class="cv-big">WORKS<i>.</i></div>
     <div class="cv-bot"><p class="cv-line">업무에 쓰고 있는<br>도구들입니다.</p><p class="cv-items">그로스 진단 템플릿 · CRM 캠페인 워크플로우 · 발송 조건 설계 · 광고 소재 제작 · 내 연봉 키우기 · 콘텐츠 자동 발행</p></div>
   </div></div>
+<div class="zone-body">
 <section class="sec" id="works">
   <div class="wrap">
     <div class="sh rv"><span class="lb">04 — WORKS</span><span class="rt">화면으로 보기 · 6</span></div>
@@ -570,13 +577,15 @@
 </section>
 
 </div>
+</div>
 
 <div class="zone zone-about">
-  <div class="cover cover-about"><div class="wrap">
+  <div class="zcover zcover-about"><div class="wrap">
     <div class="cv-top"><span>03 / 03</span><span>ABOUT</span></div>
     <div class="cv-big">ABOUT<i>.</i></div>
     <div class="cv-bot"><p class="cv-line">어떤 기준으로 만들고,<br>어디서 일해 왔는지.</p><p class="cv-items">도구를 만드는 기준 · 경력</p></div>
   </div></div>
+<div class="zone-body">
 <section class="sec" id="how">
   <div class="wrap">
     <div class="sh rv"><span class="lb">05 — HOW I BUILD</span><span class="rt"></span></div>
@@ -606,6 +615,7 @@
 </section>
 
 </div>
+</div>
 
 <footer id="contact">
   <div class="wrap">
@@ -620,7 +630,7 @@
 
 <script>
 /* topbar */
-(function(){const tb=document.getElementById('topbar');const darks=[...document.querySelectorAll('.hero,.cover-works,.cover-try')];const f=()=>{const y=29;tb.classList.toggle('dark',darks.some(d=>{const r=d.getBoundingClientRect();return r.top<=y&&r.bottom>y;}));};addEventListener('scroll',f,{passive:true});f();})();
+(function(){const tb=document.getElementById('topbar');const darks=[...document.querySelectorAll('.hero,.zcover-works,.zcover-try')];const f=()=>{const y=29;tb.classList.toggle('dark',darks.some(d=>{const r=d.getBoundingClientRect();return r.top<=y&&r.bottom>y;}));};addEventListener('scroll',f,{passive:true});f();})();
 
 /* ---------- 재구매·아하모먼트 분석 ---------- */
 (function(){
@@ -976,7 +986,7 @@
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   requestAnimationFrame(()=>document.body.classList.add('ready'));
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
-  document.querySelectorAll('.rv,.cover').forEach(el=>reduce?el.classList.add('in'):io.observe(el));
+  document.querySelectorAll('.rv,.zcover').forEach(el=>reduce?el.classList.add('in'):io.observe(el));
   const nums=document.querySelectorAll('.hstat .v[data-n]');
   const run=el=>{const n=+el.dataset.n,pre=el.dataset.pre||'',suf=el.dataset.suf||'';const t0=performance.now(),D=1400;
     const step=t=>{const p=Math.min(1,(t-t0)/D),e=1-Math.pow(1-p,3);el.textContent=pre+(el.dataset.dec?(n*e).toFixed(+el.dataset.dec):Math.round(n*e))+suf;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);};
